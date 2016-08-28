@@ -4,16 +4,9 @@
  * Created by Babenoff at 26.08.16 - 23:38
  */
 $config = require "config/config.php";
+require "config/container.php";
+require "config/event_dispatcher.php";
 $app = new \LD2\App();
-
-$db = new \LD2\Database(
-    $config["database"]["user"],
-    $config["database"]["password"],
-    $config["database"]["database"],
-    $config["database"]["host"],
-    $config["database"]["engine"]
-);
-$app->setPdo($db);
 
 $headers = [
     \LD2\View::NO_CACHE,
@@ -27,7 +20,14 @@ if(strtok(getenv("HTTP_USER_AGENT")) != "Mozilla"){
 
 $view = new \LD2\View($headers);
 $app->setView($view);
-$app->setContainer(require "config/container.php");
-$app->setEventDispatcher(require "config/event_dispatcher.php");
+/** @var \Symfony\Component\DependencyInjection\ContainerBuilder $container */
+
+//$userService = $container->get("user_service");
+/** @var \LD2\Service\IUserService $us */
+$us = $container->get("user_service");
+
+$tester = $us->findByUsername("tester");
+//$app->setPdo($container->get("pdo"));
+$app->setContainer($container);
 
 $app->run();

@@ -8,7 +8,33 @@
 namespace LD2\Service;
 
 
-interface IUserService
+use Exception\UserServiceException;
+use LD2\ISave;
+
+/**
+ * Interface IUserService
+ * @package LD2\Service
+ */
+interface IUserService extends ISave
 {
+    /**
+     * @param string $username
+     * @return array
+     * @throws  UserServiceException
+     */
+    public function findByUsername($username);
+
+    /**
+     * @param string $email
+     * @return array
+     * @throws  UserServiceException
+     */
+    public function findByEmail($email);
+
+    /**
+     * @param string $username
+     * @return \ArrayIterator
+     */
+    public function getHeroes($username);
 
 }

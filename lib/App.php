@@ -10,13 +10,11 @@ namespace LD2;
 use LD2\QueryBuilder\Additional\Condition;
 use LD2\QueryBuilder\Additional\Field;
 use PDO;
+use Symfony\Component\DependencyInjection\Container;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 class App
 {
-    /**
-     * @var Database
-     */
-    protected $_pdo;
     /**
      * @var View
      */
@@ -34,13 +32,9 @@ class App
      */
     protected $game;
     /**
-     * @var Container
+     * @var ContainerBuilder
      */
     protected $_container;
-    /**
-     * @var EventDispatcher
-     */
-    protected $_eventDispatcher;
 
     public function __construct()
     {
@@ -56,15 +50,7 @@ class App
      */
     public function getPdo(): Database
     {
-        return $this->_pdo;
-    }
-
-    /**
-     * @param \PDO $pdo
-     */
-    public function setPdo(\PDO $pdo)
-    {
-        $this->_pdo = $pdo;
+        return $this->_container->get("pdo");
     }
 
     /**
@@ -85,20 +71,7 @@ class App
 
     public function connect(){
         global $config;
-        $qb = $this->getPdo()->queryBuilder();
-        $auserSQL = $qb->select(["sessions"]);
-        $sid = new Field("sid");
-        $auserSQL->setSelect([new Field("username"), new Field("location_id")]);
-        $auserSQL->setWhere(
-            new Condition(
-                Condition::EQ,
-                $sid,
-                $_COOKIE[$config["cookie_name"]]
-            ));
-        $sql = $auserSQL->sql();
-        $stmt = $this->getPdo()->prepare($sql);
-
-        return true;
+        return false;
     }
 
     public function removeLoadedLoc($locId){
@@ -143,17 +116,17 @@ class App
     }
 
     /**
-     * @return Container
+     * @return ContainerBuilder
      */
-    public function getContainer(): Container
+    public function getContainer(): ContainerBuilder
     {
         return $this->_container;
     }
 
     /**
-     * @param Container $container
+     * @param ContainerBuilder $container
      */
-    public function setContainer(Container $container)
+    public function setContainer(ContainerBuilder $container)
     {
         $this->_container = $container;
     }
@@ -163,14 +136,7 @@ class App
      */
     public function getEventDispatcher(): EventDispatcher
     {
-        return $this->_eventDispatcher;
+        return $this->getContainer()->get("evd");
     }
 
-    /**
-     * @param EventDispatcher $eventDispatcher
-     */
-    public function setEventDispatcher(EventDispatcher $eventDispatcher)
-    {
-        $this->_eventDispatcher = $eventDispatcher;
-    }
 }

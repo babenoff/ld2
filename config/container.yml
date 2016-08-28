@@ -1,0 +1,31 @@
+parameters:
+  db_engine: "mysql"
+  db_user: "ld2"
+  db_password: "AaFrv54$5sdf"
+  db_host: "localhost"
+  db_dbname: "likedimion"
+
+services:
+  pdo:
+    class: 'LD2\Database'
+    arguments: ['%db_user%','%db_password%', '%db_dbname%', '%db_host%', '%db_engine%']
+
+  evd:
+    class: 'LD2\EventDispatcher'
+
+  base_pdo_evd_service:
+    abstract: true
+    calls:
+      - [setPdo, ['@pdo']]
+      - [setEvd, ['@evd']]
+  ld2.registration_service:
+    class: 'LD2\Service\RegistrationService'
+    calls:
+      - [setPdo, ['@pdo']]
+      - [setEvd, ['@evd']]
+  user_service:
+    class: 'LD2\Service\UserService'
+    parent: 'base_pdo_evd_service'
+    calls:
+      - [setPdo, ['@pdo']]
+      - [setEvd, ['@evd']]

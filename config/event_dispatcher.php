@@ -5,8 +5,7 @@
  * Created by Babenoff at 28.08.16 - 9:40
  */
 
-$evm = new \LD2\EventDispatcher();
+/** @var \LD2\EventDispatcher $evd */
+$evd = $container->get("evd");
 
 
-
-return $evm;

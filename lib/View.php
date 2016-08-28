@@ -31,7 +31,7 @@ class View
         $data["title"] = $title;
         $header = file_get_contents(ROOT."/res/templates/header.xhtml");
         $footer = file_get_contents(ROOT."/res/templates/footer.xhtml");
-        ob_start("replaceLinks");
+        ob_start([$this,"replaceLinks"]);
         $tmp = "";
         $tmp .= $header.$page.$footer;
         $tmp = preg_replace_callback("/{{(.*)}}/i", function($matches)use($data){
@@ -40,7 +40,7 @@ class View
             }
             return $matches[1];
         }, $tmp);
-        $tmp = $this->replaceLinks($tmp);
+        //$tmp = $this->replaceLinks($tmp);
         echo $tmp;
         ob_get_contents();
         ob_end_flush();
@@ -48,9 +48,5 @@ class View
 
     protected function replaceLinks($buffer){
         return preg_replace('/<a(.+?)href="(.+?)"(.*?)>(.+?)<\/a>/mi', '<a$1href="$2&'.substr(md5(random_bytes(8)),0,6).'"$3>$4</a>', $buffer);
-    }
-
-    protected function replaceProcess($link){
-        return $link."&".random_int(1,99);
     }
 }
