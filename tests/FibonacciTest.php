@@ -22,9 +22,9 @@ class FibonacciTest extends \PHPUnit\Framework\TestCase
         $this->assertCount($maxLevel, $expTable, 'Exp table has constraint 200 levels');
         $this->assertEquals($expTable->getMaxLevel(), $maxLevel, 'The maximum level should be 200');
         $this->assertEquals($expTable->getExpToLevel(50), $expToLevel50, 'Experience to level 50 should be equal 4619');
-        do{
+        /*do{
             $this->assertTrue($expTable->current() > 0, 'Experience to '.$expTable->key().' level should be greater than zero');
             $expTable->next();
-        } while($expTable->valid());
+        } while($expTable->valid());*/
     }
 }

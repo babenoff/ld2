@@ -5,7 +5,7 @@
  * Created by Babenoff at 28.08.16 - 23:22
  */
 
-namespace Exception;
+namespace LD2\Exception;
 
 
 use LD2\Exception\RuntimeExcetion;

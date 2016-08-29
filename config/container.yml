@@ -23,9 +23,27 @@ services:
     calls:
       - [setPdo, ['@pdo']]
       - [setEvd, ['@evd']]
-  user_service:
+
+  ld2.user_service:
     class: 'LD2\Service\UserService'
     parent: 'base_pdo_evd_service'
     calls:
       - [setPdo, ['@pdo']]
       - [setEvd, ['@evd']]
+
+  ld2.game_manager:
+    class: 'LD2\Manager\GameManagerImpl'
+    calls:
+      - [setGameService, ['@ld2.game_service']]
+
+  ld2.ai:
+    class: 'LD2\Ai'
+    calls:
+      - [setGameManager, ['@ld2.game_manager']]
+
+  ld2.game_service:
+    class: 'LD2\Service\GameService'
+    calls:
+      - [setPdo,          ['@pdo']]
+      #- [setEvd,          ['@evd']]
+

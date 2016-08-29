@@ -21,13 +21,6 @@ if(strtok(getenv("HTTP_USER_AGENT")) != "Mozilla"){
 $view = new \LD2\View($headers);
 $app->setView($view);
 /** @var \Symfony\Component\DependencyInjection\ContainerBuilder $container */
-
-//$userService = $container->get("user_service");
-/** @var \LD2\Service\IUserService $us */
-$us = $container->get("user_service");
-
-$tester = $us->findByUsername("tester");
-//$app->setPdo($container->get("pdo"));
 $app->setContainer($container);
 
 $app->run();
