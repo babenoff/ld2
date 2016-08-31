@@ -1,4 +1,8 @@
 parameters:
+  game_version: "v0.0.1-alpha1"
+  timezone: "Europe/Moscow"
+  session_lifetime: 300
+  debug: false
   db_engine: "mysql"
   db_user: "ld2"
   db_password: "AaFrv54$5sdf"
@@ -9,41 +13,61 @@ services:
   pdo:
     class: 'LD2\Database'
     arguments: ['%db_user%','%db_password%', '%db_dbname%', '%db_host%', '%db_engine%']
-
+    calls:
+      - [setDebug, ['%debug%']]
+      - [setProfiling, []]
   evd:
     class: 'LD2\EventDispatcher'
-
   base_pdo_evd_service:
     abstract: true
     calls:
       - [setPdo, ['@pdo']]
       - [setEvd, ['@evd']]
+  ld2.game_manager:
+    class: 'LD2\Manager\GameManagerImpl'
+    calls:
+      - [setGameService, ['@ld2.game_service']]
+  ld2.ai:
+    class: 'LD2\Ai'
+    calls:
+      - [setGameManager, ['@ld2.game_manager']]
+  ld2.game_service:
+    class: 'LD2\Service\GameService'
+    calls:
+      - [setPdo,          ['@pdo']]
   ld2.registration_service:
     class: 'LD2\Service\RegistrationService'
     calls:
       - [setPdo, ['@pdo']]
       - [setEvd, ['@evd']]
-
   ld2.user_service:
     class: 'LD2\Service\UserService'
     parent: 'base_pdo_evd_service'
     calls:
       - [setPdo, ['@pdo']]
       - [setEvd, ['@evd']]
-
-  ld2.game_manager:
-    class: 'LD2\Manager\GameManagerImpl'
+  abstract_repository:
+    abstract: true:
     calls:
-      - [setGameService, ['@ld2.game_service']]
-
-  ld2.ai:
-    class: 'LD2\Ai'
+      - [setPdo, ['@pdo']]
+  hero_repository:
+    class: 'LD2\Repository\HeroRepository'
+    parent: abstract_repository
     calls:
-      - [setGameManager, ['@ld2.game_manager']]
-
-  ld2.game_service:
-    class: 'LD2\Service\GameService'
-    calls:
-      - [setPdo,          ['@pdo']]
-      #- [setEvd,          ['@evd']]
+      - [setTables, [['heroes']]]
+  user_repository:
+      class: 'LD2\Repository\UserRepository'
+      parent: abstract_repository
+      calls:
+        - [setTables, [['users']]]
+  locations_repository:
+        class: 'LD2\Repository\LocationsRepository'
+        parent: abstract_repository
+        calls:
+          - [setTables, [['locations']]]
+  session_repository:
+          class: 'LD2\Repository\SessionRepository'
+          parent: abstract_repository
+          calls:
+            - [setTables, [['sessions']]]
 

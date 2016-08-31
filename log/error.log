@@ -4740,3 +4740,450 @@ Stack trace:
 2016/08/28 23:28:05 [error] 7639#7639: *200 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
 PHP message: PHP Stack trace:
 PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/30 18:21:16 [error] 2722#2722: *2 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/08/30 18:21:17 [error] 2722#2722: *2 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/30 18:22:06 [error] 2724#2724: *8 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/08/30 18:25:07 [error] 2724#2724: *11 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/30 18:57:55 [error] 2724#2724: *26 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/08/30 18:57:56 [error] 2724#2724: *23 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught PDOException: PDO::__construct(): php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /var/www/ld2/lib/Database.php:28
+Stack trace:
+#0 /var/www/ld2/lib/Database.php(28): PDO->__construct('mysql:dbname=li...', 'ld2', 'AaFrv54$5sdf')
+#1 [internal function]: LD2\Database->__construct('ld2', 'AaFrv54$5sdf', 'likedimion', 'localhos1t', 'mysql')
+#2 /var/www/ld2/vendor/symfony/dependency-injection/ContainerBuilder.php(846): ReflectionClass->newInstanceArgs(Array)
+#3 /var/www/ld2/vendor/symfony/dependency-injection/ContainerBuilder.php(417): Symfony\Component\DependencyInjection\ContainerBuilder->createService(Object(Symfony\Component\DependencyInjection\Definition), 'pdo')
+#4 /var/www/ld2/vendor/symfony/dependency-injection/ContainerBuilder.php(903): Symfony\Component\DependencyInjection\ContainerBuilder->get('pdo', 1)
+#5 /var/www/ld2/vendor/symfony/dependency-injection/ContainerBuilder.php(900): Symfony\Component\DependencyInjection\Conta" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /login.php HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/08/30 18:57:56 [error] 2724#2724: *26 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/30 18:58:16 [error] 2724#2724: *23 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught PDOException: PDO::__construct(): php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /var/www/ld2/lib/Database.php:28
+Stack trace:
+#0 /var/www/ld2/lib/Database.php(28): PDO->__construct('mysql:dbname=li...', 'ld2', 'AaFrv54$5sdf')
+#1 [internal function]: LD2\Database->__construct('ld2', 'AaFrv54$5sdf', 'likedimion', 'localhos1t', 'mysql')
+#2 /var/www/ld2/vendor/symfony/dependency-injection/ContainerBuilder.php(846): ReflectionClass->newInstanceArgs(Array)
+#3 /var/www/ld2/vendor/symfony/dependency-injection/ContainerBuilder.php(417): Symfony\Component\DependencyInjection\ContainerBuilder->createService(Object(Symfony\Component\DependencyInjection\Definition), 'pdo')
+#4 /var/www/ld2/vendor/symfony/dependency-injection/ContainerBuilder.php(903): Symfony\Component\DependencyInjection\ContainerBuilder->get('pdo', 1)
+#5 /var/www/ld2/vendor/symfony/dependency-injection/ContainerBuilder.php(900): Symfony\Component\DependencyInjection\Conta" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /login.php HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/08/30 18:58:16 [error] 2724#2724: *26 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught PDOException: PDO::__construct(): php_network_getaddresses: getaddrinfo failed: Temporary failure in name resolution in /var/www/ld2/lib/Database.php:28
+Stack trace:
+#0 /var/www/ld2/lib/Database.php(28): PDO->__construct('mysql:dbname=li...', 'ld2', 'AaFrv54$5sdf')
+#1 [internal function]: LD2\Database->__construct('ld2', 'AaFrv54$5sdf', 'likedimion', 'localhos1t', 'mysql')
+#2 /var/www/ld2/vendor/symfony/dependency-injection/ContainerBuilder.php(846): ReflectionClass->newInstanceArgs(Array)
+#3 /var/www/ld2/vendor/symfony/dependency-injection/ContainerBuilder.php(417): Symfony\Component\DependencyInjection\ContainerBuilder->createService(Object(Symfony\Component\DependencyInjection\Definition), 'pdo')
+#4 /var/www/ld2/vendor/symfony/dependency-injection/ContainerBuilder.php(903): Symfony\Component\DependencyInjection\ContainerBuilder->get('pdo', 1)
+#5 /var/www/ld2/vendor/symfony/dependency-injection/ContainerBuilder.php(900): Symfony\Component\DependencyInjection\Conta" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /login.php HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/30 18:58:30 [error] 2724#2724: *26 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/30 19:02:51 [error] 2722#2722: *35 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/30 19:05:40 [error] 2722#2722: *42 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/30 19:08:57 [error] 2722#2722: *49 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/30 19:09:21 [error] 2722#2722: *56 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/30 19:09:36 [error] 2722#2722: *56 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/30 19:10:16 [error] 2722#2722: *69 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/30 19:11:49 [error] 2722#2722: *76 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/30 19:11:55 [error] 2722#2722: *76 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/30 19:11:56 [error] 2722#2722: *76 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/30 19:11:57 [error] 2722#2722: *76 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/30 19:12:03 [error] 2722#2722: *76 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/30 19:12:04 [error] 2722#2722: *76 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/30 19:12:05 [error] 2722#2722: *76 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/30 19:12:05 [error] 2722#2722: *76 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/30 19:12:06 [error] 2722#2722: *76 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/30 19:12:11 [error] 2722#2722: *76 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/30 19:12:11 [error] 2722#2722: *76 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/30 19:12:12 [error] 2722#2722: *76 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/30 19:12:12 [error] 2722#2722: *76 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/30 19:12:13 [error] 2722#2722: *76 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/30 19:12:14 [error] 2722#2722: *76 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/30 19:12:14 [error] 2722#2722: *76 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/30 19:12:14 [error] 2722#2722: *76 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/30 19:12:15 [error] 2722#2722: *76 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/30 19:12:15 [error] 2722#2722: *76 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/30 19:12:16 [error] 2722#2722: *76 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/30 19:12:17 [error] 2722#2722: *76 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/30 19:12:17 [error] 2722#2722: *76 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/30 19:12:18 [error] 2722#2722: *76 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/30 19:12:18 [error] 2722#2722: *76 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/30 19:12:20 [error] 2722#2722: *76 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/30 19:12:20 [error] 2724#2724: *125 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/30 21:42:10 [error] 2724#2724: *165 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/30 21:42:12 [error] 2724#2724: *165 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/30 22:57:22 [error] 2723#2723: *175 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/30 22:57:48 [error] 2724#2724: *182 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/30 23:12:43 [error] 2724#2724: *189 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 11:14:59 [error] 2697#2697: *1 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/08/31 11:14:59 [error] 2697#2697: *1 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 11:15:02 [error] 2697#2697: *1 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 11:15:55 [error] 2697#2697: *13 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 11:18:57 [error] 2697#2697: *21 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 11:18:58 [error] 2697#2697: *21 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 11:19:17 [error] 2697#2697: *31 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 11:19:21 [error] 2697#2697: *31 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 11:19:24 [error] 2697#2697: *31 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 13:14:40 [error] 2697#2697: *44 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: session_data in /var/www/ld2/lib/Repository/SessionRepository.php on line 92
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/login.php:0
+PHP message: PHP   2. require() /var/www/ld2/login.php:6
+PHP message: PHP   3. require() /var/www/ld2/setup.php:9
+PHP message: PHP   4. session_start() /var/www/ld2/app.php:21
+PHP message: PHP   5. LD2\Repository\SessionRepository->read() /var/www/ld2/app.php:21" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /login.php HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/08/31 13:14:41 [error] 2697#2697: *44 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 13:14:41 [error] 2697#2697: *44 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: session_data in /var/www/ld2/lib/Repository/SessionRepository.php on line 92
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/login.php:0
+PHP message: PHP   2. require() /var/www/ld2/login.php:6
+PHP message: PHP   3. require() /var/www/ld2/setup.php:9
+PHP message: PHP   4. session_start() /var/www/ld2/app.php:21
+PHP message: PHP   5. LD2\Repository\SessionRepository->read() /var/www/ld2/app.php:21" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /login.php HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 13:16:24 [error] 2697#2697: *51 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 13:18:02 [error] 2697#2697: *58 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 13:18:02 [error] 2697#2697: *58 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 13:18:03 [error] 2697#2697: *58 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 13:18:03 [error] 2697#2697: *58 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 13:18:04 [error] 2697#2697: *58 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 13:18:04 [error] 2697#2697: *58 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 13:18:04 [error] 2697#2697: *58 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 13:27:04 [error] 2697#2697: *83 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 13:28:48 [error] 2697#2697: *90 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 13:29:43 [error] 2697#2697: *97 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 13:36:33 [error] 2697#2697: *104 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: duration in /var/www/ld2/lib/View.php on line 70
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/login.php:0
+PHP message: PHP   2. LD2\View->display() /var/www/ld2/login.php:34
+PHP message: PHP   3. LD2\View->_debug() /var/www/ld2/lib/View.php:45" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /login.php HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/08/31 13:36:33 [error] 2697#2697: *104 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 13:36:33 [error] 2697#2697: *104 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: duration in /var/www/ld2/lib/View.php on line 70
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/login.php:0
+PHP message: PHP   2. LD2\View->display() /var/www/ld2/login.php:34
+PHP message: PHP   3. LD2\View->_debug() /var/www/ld2/lib/View.php:45" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /login.php HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 13:37:39 [error] 2697#2697: *111 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 13:37:57 [error] 2697#2697: *118 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 13:41:26 [error] 2697#2697: *125 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 13:41:37 [error] 2697#2697: *125 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 13:41:44 [error] 2697#2697: *125 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 13:41:45 [error] 2697#2697: *125 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 13:42:26 [error] 2697#2697: *144 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 13:42:28 [error] 2697#2697: *144 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 13:43:17 [error] 2697#2697: *154 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 13:43:59 [error] 2697#2697: *161 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 13:44:27 [error] 2697#2697: *168 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 13:44:39 [error] 2697#2697: *168 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 13:45:15 [error] 2697#2697: *168 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 13:45:51 [error] 2697#2697: *183 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 13:46:11 [error] 2697#2697: *189 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 13:46:14 [error] 2697#2697: *189 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 13:48:08 [error] 2697#2697: *199 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 13:48:12 [error] 2697#2697: *199 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 13:52:46 [error] 2698#2698: *206 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Symfony\Component\DependencyInjection\Exception\BadMethodCallException: Setting service "composer.json" for an unknown or non-synthetic service definition on a frozen container is not allowed. in /var/www/ld2/vendor/symfony/dependency-injection/ContainerBuilder.php:345
+Stack trace:
+#0 /var/www/ld2/config/container.php(16): Symfony\Component\DependencyInjection\ContainerBuilder->set('composer.json', Object(stdClass))
+#1 /var/www/ld2/app.php(12): require('/var/www/ld2/co...')
+#2 /var/www/ld2/setup.php(9): require('/var/www/ld2/ap...')
+#3 /var/www/ld2/login.php(6): require('/var/www/ld2/se...')
+#4 {main}
+  thrown in /var/www/ld2/vendor/symfony/dependency-injection/ContainerBuilder.php on line 345" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /login.php HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/08/31 13:52:46 [error] 2698#2698: *206 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 13:52:46 [error] 2698#2698: *206 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Symfony\Component\DependencyInjection\Exception\BadMethodCallException: Setting service "composer.json" for an unknown or non-synthetic service definition on a frozen container is not allowed. in /var/www/ld2/vendor/symfony/dependency-injection/ContainerBuilder.php:345
+Stack trace:
+#0 /var/www/ld2/config/container.php(16): Symfony\Component\DependencyInjection\ContainerBuilder->set('composer.json', Object(stdClass))
+#1 /var/www/ld2/app.php(12): require('/var/www/ld2/co...')
+#2 /var/www/ld2/setup.php(9): require('/var/www/ld2/ap...')
+#3 /var/www/ld2/login.php(6): require('/var/www/ld2/se...')
+#4 {main}
+  thrown in /var/www/ld2/vendor/symfony/dependency-injection/ContainerBuilder.php on line 345" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /login.php HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 13:53:21 [error] 2698#2698: *215 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 13:53:44 [error] 2698#2698: *223 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 13:54:13 [error] 2698#2698: *231 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/08/31 13:55:01 [error] 2698#2698: *239 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/08/31 13:55:05 [error] 2698#2698: *239 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 13:55:42 [error] 2698#2698: *249 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 13:55:46 [error] 2698#2698: *249 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 13:55:46 [error] 2698#2698: *249 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 13:56:17 [error] 2698#2698: *262 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 13:57:11 [error] 2698#2698: *269 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 13:59:55 [error] 2698#2698: *276 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 14:00:22 [error] 2698#2698: *283 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Cannot use object of type stdClass as array in /var/www/ld2/lib/View.php:119
+Stack trace:
+#0 [internal function]: LD2\View->copyrights('<?xml version="...', 9)
+#1 /var/www/ld2/lib/View.php(61): ob_end_flush()
+#2 /var/www/ld2/login.php(33): LD2\View->display('<h1>\xD0\x9B\xD0\xB0\xD0\xB9\xD0\xBA\xD0\xB4\xD0...')
+#3 {main}
+  thrown in /var/www/ld2/lib/View.php on line 119" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /login.php HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/08/31 14:00:23 [error] 2698#2698: *283 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 14:00:23 [error] 2698#2698: *283 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Cannot use object of type stdClass as array in /var/www/ld2/lib/View.php:119
+Stack trace:
+#0 [internal function]: LD2\View->copyrights('<?xml version="...', 9)
+#1 /var/www/ld2/lib/View.php(61): ob_end_flush()
+#2 /var/www/ld2/login.php(33): LD2\View->display('<h1>\xD0\x9B\xD0\xB0\xD0\xB9\xD0\xBA\xD0\xB4\xD0...')
+#3 {main}
+  thrown in /var/www/ld2/lib/View.php on line 119" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /login.php HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 14:00:51 [error] 2698#2698: *290 FastCGI sent in stderr: "PHP message: PHP Parse error:  syntax error, unexpected ')' in /var/www/ld2/lib/View.php on line 121" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /login.php HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/08/31 14:00:51 [error] 2698#2698: *290 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 14:00:51 [error] 2698#2698: *290 FastCGI sent in stderr: "PHP message: PHP Parse error:  syntax error, unexpected ')' in /var/www/ld2/lib/View.php on line 121" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /login.php HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 14:00:59 [error] 2698#2698: *290 FastCGI sent in stderr: "PHP message: PHP Notice:  Trying to get property of non-object in /var/www/ld2/lib/View.php on line 119
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/login.php:0
+PHP message: PHP   2. LD2\View->display() /var/www/ld2/login.php:33
+PHP message: PHP   3. ob_end_flush() /var/www/ld2/lib/View.php:61
+PHP message: PHP   4. LD2\View->copyrights() /var/www/ld2/lib/View.php:61
+PHP message: PHP Notice:  Trying to get property of non-object in /var/www/ld2/lib/View.php on line 119
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/login.php:0
+PHP message: PHP   2. LD2\View->display() /var/www/ld2/login.php:33
+PHP message: PHP   3. ob_end_flush() /var/www/ld2/lib/View.php:61
+PHP message: PHP   4. LD2\View->copyrights() /var/www/ld2/lib/View.php:61
+PHP message: PHP Warning:  sprintf(): Too few arguments in /var/www/ld2/lib/View.php on line 119
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/login.php:0
+PHP message: PHP   2. LD2\View->display() /var/www/ld2/login.php:33
+PHP message: PHP   3. ob_end_flush() /var/www/ld2/lib/View.php:61
+PHP message: PHP   4. LD2\View->copyrights() /var/www/ld2/lib/View.php:61
+PHP message: PHP   5. sprintf() /var/www/ld2/lib/View.php:119" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /login.php HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/08/31 14:00:59 [error] 2698#2698: *290 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 14:00:59 [error] 2698#2698: *290 FastCGI sent in stderr: "PHP message: PHP Notice:  Trying to get property of non-object in /var/www/ld2/lib/View.php on line 119
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/login.php:0
+PHP message: PHP   2. LD2\View->display() /var/www/ld2/login.php:33
+PHP message: PHP   3. ob_end_flush() /var/www/ld2/lib/View.php:61
+PHP message: PHP   4. LD2\View->copyrights() /var/www/ld2/lib/View.php:61
+PHP message: PHP Notice:  Trying to get property of non-object in /var/www/ld2/lib/View.php on line 119
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/login.php:0
+PHP message: PHP   2. LD2\View->display() /var/www/ld2/login.php:33
+PHP message: PHP   3. ob_end_flush() /var/www/ld2/lib/View.php:61
+PHP message: PHP   4. LD2\View->copyrights() /var/www/ld2/lib/View.php:61
+PHP message: PHP Warning:  sprintf(): Too few arguments in /var/www/ld2/lib/View.php on line 119
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/login.php:0
+PHP message: PHP   2. LD2\View->display() /var/www/ld2/login.php:33
+PHP message: PHP   3. ob_end_flush() /var/www/ld2/lib/View.php:61
+PHP message: PHP   4. LD2\View->copyrights() /var/www/ld2/lib/View.php:61
+PHP message: PHP   5. sprintf() /var/www/ld2/lib/View.php:119" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /login.php HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 14:03:34 [error] 2698#2698: *300 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Cannot use object of type stdClass as array in /var/www/ld2/lib/View.php:121
+Stack trace:
+#0 [internal function]: LD2\View->copyrights('<?xml version="...', 9)
+#1 /var/www/ld2/lib/View.php(61): ob_end_flush()
+#2 /var/www/ld2/login.php(33): LD2\View->display('<h1>\xD0\x9B\xD0\xB0\xD0\xB9\xD0\xBA\xD0\xB4\xD0...')
+#3 {main}
+  thrown in /var/www/ld2/lib/View.php on line 121" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /login.php HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/08/31 14:03:34 [error] 2698#2698: *300 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 14:03:34 [error] 2698#2698: *300 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Cannot use object of type stdClass as array in /var/www/ld2/lib/View.php:121
+Stack trace:
+#0 [internal function]: LD2\View->copyrights('<?xml version="...', 9)
+#1 /var/www/ld2/lib/View.php(61): ob_end_flush()
+#2 /var/www/ld2/login.php(33): LD2\View->display('<h1>\xD0\x9B\xD0\xB0\xD0\xB9\xD0\xBA\xD0\xB4\xD0...')
+#3 {main}
+  thrown in /var/www/ld2/lib/View.php on line 121" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /login.php HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 14:04:04 [error] 2698#2698: *307 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 14:05:36 [error] 2698#2698: *314 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 14:07:42 [error] 2698#2698: *321 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 14:08:07 [error] 2698#2698: *328 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 14:08:07 [error] 2698#2698: *328 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: config in /var/www/ld2/index.php on line 2
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"

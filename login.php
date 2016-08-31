@@ -9,7 +9,7 @@ setcookie($config["cookie_name"], "", time() - 3600);
 if (isset($_POST["username"])) {
 
 } else {
-    $app->connect();
+
     $page = <<<LOGIN
 <h1>{$config["gName"]}</h1>
 <form class="login_form" action="login.php" method="post">
@@ -29,4 +29,5 @@ if (isset($_POST["username"])) {
 <a class="strong" href="/?"></a>
 LOGIN;
 }
+
 $app->getView()->display($page);

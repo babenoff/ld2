@@ -46,4 +46,9 @@ interface IGameService
      * @return array
      */
     public function getNeighboringLocsIds(string $locId):array;
+
+    /**
+     * @return void
+     */
+    public function start():void;
 }

@@ -11,6 +11,7 @@ use LD2\Exception\GameException;
 use LD2\QueryBuilder\Additional\AllFields;
 use LD2\QueryBuilder\Additional\Condition;
 use LD2\QueryBuilder\Additional\Field;
+use LD2\Repository\ILocationRepository;
 
 class GameService implements IGameService
 {
@@ -18,6 +19,10 @@ class GameService implements IGameService
      * @var Database
      */
     protected $pdo;
+    /**
+     * @var ILocationRepository
+     */
+    protected $locRepo;
 
     /**
      * @return Database
@@ -162,5 +167,29 @@ class GameService implements IGameService
         list($x, $y) = explode("x", $coord);
         $locs = $this->_buildNeigboringLocIds($prefix, $x, $y, [$locId]);
         return $locs;
+    }
+
+    /**
+     * @return void
+     */
+    public function start():void
+    {
+        // TODO: Implement start() method.
+    }
+
+    /**
+     * @return ILocationRepository
+     */
+    public function getLocRepo(): ILocationRepository
+    {
+        return $this->locRepo;
+    }
+
+    /**
+     * @param ILocationRepository $locRepo
+     */
+    public function setLocRepo(ILocationRepository $locRepo)
+    {
+        $this->locRepo = $locRepo;
     }
 }

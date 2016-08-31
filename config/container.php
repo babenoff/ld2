@@ -11,6 +11,10 @@ $locator = new \Symfony\Component\Config\FileLocator(dirname(__FILE__));
 $loader = new \Symfony\Component\DependencyInjection\Loader\YamlFileLoader($container, $locator);
 $loader->load("container.yml");
 
+$container->set("composer.json", json_decode(file_get_contents(__DIR__."/../composer.json")));
+
+$container->compile();
+
 /*$db = new \LD2\Database(
     $container->getParameter("db_user"),//$config["database"]["user"],
     $container->getParameter("db_password"),//$config["database"]["password"],
