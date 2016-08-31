@@ -66,7 +66,7 @@ body {
 a:link, a:active, a:visited {
     color: #4d606a;
     text-decoration: none;
-    display: inline-block;
+    /*display: inline-block;*/
     margin: 3px 1px 3px 1px;
 }
 
@@ -75,7 +75,7 @@ a:link, a:active, a:visited {
 }
 
 a:hover {
-    border-bottom: 1px dotted #e5d2a6;
+    /*border-bottom: 1px dotted #e5d2a6;*/
     text-decoration: none;
 }
 

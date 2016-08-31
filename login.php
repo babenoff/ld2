@@ -11,17 +11,17 @@ if (isset($_POST["username"])) {
 
 } else {
     $page .= <<<LOGIN
-<form class="center w300 card card-inverse card-success text-xs-center" action="login.php" method="post">
+<form class="login_form" action="login.php" method="post">
     <div>Логин:</div>
     <div>
-        <input class="form-control" name="username" placeholder="Логин" />
+        <input class="ram form-control" name="username" placeholder="Логин" />
     </div>
     <div>Пароль:</div>
     <div>
-        <input class="form-control" name="password" placeholder="Пароль" />
+        <input class="ram form-control" name="password" placeholder="Пароль" />
     </div>
     <div>
-        <input class="btn btn-outline-danger" type="submit" value="Вход" /> <a class="strong" href="reg.php?">Регистрация</a>
+        <input class="button btn-primary" type="submit" value="Вход" /> <a class="strong" href="reg.php?">Регистрация</a>
     </div>
 </form>
 <hr/>
