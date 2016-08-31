@@ -37,7 +37,7 @@ class View
 
     public function display($page, $data = [], $title = "Лайкдимион 2"){
         $data["title"] = $title;
-        $header = file_get_contents(ROOT."/res/templates/header.xhtml");
+        $header = file_get_contents(ROOT."/res/templates/header5.html");
         $footer = file_get_contents(ROOT."/res/templates/footer.xhtml");
         ob_start([$this,"replaceLinks"]);
         ob_start([$this, "replaceGenTime"]);
@@ -123,6 +123,6 @@ class View
                 $a .= "<br />".$author->name."&".$author->email.">";
             }
         }
-        return str_replace("%copyrigts%", $a, $buffer);
+        return str_replace("%copyrights%", $a, $buffer);
     }
 }

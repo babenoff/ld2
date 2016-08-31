@@ -4,12 +4,14 @@
  * Created by Babenoff at 27.08.16 - 0:03
  */
 require "setup.php";
-
+$page = "<h1>Регистрация</h1>";
+$errors = [];
 if(isset($_POST["username"])){
-
-} else {
-   $page = <<<REG_
-<h1>Регистрация</h1>
+    /** @var \LD2\Repository\IHeroRepository $heroRepo */
+    $heroRepo = $app->getContainer()->get("hero_repository");
+    $tmp = "";
+}  else {
+    $tmp .= <<<REG_
 <form class="login_form" action="login.php" method="post">
     <div>Логин:</div>
     <div>
@@ -36,4 +38,12 @@ if(isset($_POST["username"])){
 <a class="strong" href="./?">на главную</a>
 REG_;
 }
+if(count($errors)){
+    $page .="<div class='alert alert-danger'>";
+        foreach ($errors as $error){
+            $page .= "<div>".$error."</div>";
+        }
+    $page .="</div>";
+}
+$page .=$tmp;
 $app->getView()->display($page);
