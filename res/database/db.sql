@@ -57,11 +57,11 @@ CREATE TABLE `heroes` (
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `location_id` varchar(32) DEFAULT NULL,
   `hero_level` int(11) DEFAULT '1',
-  `hero_char` json DEFAULT NULL,
-  `hero_stats` json DEFAULT NULL,
-  `hero_status` json DEFAULT NULL,
-  `hero_timers` json DEFAULT NULL,
-  `hero_war` json DEFAULT NULL,
+  `hero_char` text,
+  `hero_stats` text,
+  `hero_status` text,
+  `hero_timers` text,
+  `hero_war` text,
   `hero_statistic` text,
   `hero_magic` text,
   `hero_inventory` text,
@@ -179,4 +179,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-08-31 18:42:54
+-- Dump completed on 2016-08-31 18:44:19
