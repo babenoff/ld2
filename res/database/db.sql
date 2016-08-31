@@ -123,11 +123,10 @@ DROP TABLE IF EXISTS `sessions`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `sessions` (
   `sid` varchar(255) NOT NULL,
-  `touched` datetime DEFAULT CURRENT_TIMESTAMP,
+  `touched` datetime DEFAULT CURRENT_TIMESTAMP COMMENT 'NOW',
   `session_data` text,
   PRIMARY KEY (`sid`),
-  UNIQUE KEY `sessions_sid_IDX` (`sid`),
-  UNIQUE KEY `sessions_user_sid_IDX` (`sid`)
+  UNIQUE KEY `sessions_sid_IDX` (`sid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -137,7 +136,6 @@ CREATE TABLE `sessions` (
 
 LOCK TABLES `sessions` WRITE;
 /*!40000 ALTER TABLE `sessions` DISABLE KEYS */;
-INSERT INTO `sessions` VALUES ('d78jp6i21hl1r3vldimvqc7q72','2016-08-31 14:13:07','');
 /*!40000 ALTER TABLE `sessions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -180,4 +178,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-08-31 18:05:32
+-- Dump completed on 2016-08-31 18:36:42
