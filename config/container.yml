@@ -1,5 +1,7 @@
 parameters:
   game_version: "v0.0.1-alpha1"
+  game_title: "Лайкдимион"
+  cookie_name: "Likedimion2"
   timezone: "Europe/Moscow"
   session_lifetime: 300
   debug: false

@@ -1,0 +1,19 @@
+base:
+  path: /
+  defaults: {_controller: 'LD2Controller\StartController:indexAction'}
+
+login:
+  path: /login
+  defaults: {_controller: 'LD2Controller\SiteController:loginAction'}
+
+registration:
+  path: /reg
+  defaults: {_controller: 'LD2Controller\SiteController:registrationAction'}
+
+game_main:
+  path: /game.main
+  defaults: {_controller: 'LD2Controller\GameController:mainAction'}
+
+err404:
+  path: /err404
+  defaults: {_controller: 'LD2Controller\ErrorController:err404Action'}

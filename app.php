@@ -12,13 +12,18 @@ $config = require "config/config.php";
 require "config/container.php";
 require "config/event_dispatcher.php";
 
+
 if (!ini_get('date.timezone')) {
     ini_set('date.timezone', $container->getParameter("timezone"));
 }
 
 ini_set('session.gc_maxlifetime', $container->getParameter("session_lifetime"));
 session_set_save_handler($container->get("session_repository"), true);
-session_start();
+$sid = session_id();
+if(is_null($sid)) {
+    session_start();
+    $sid = session_id();
+}
 $app = new \LD2\App();
 
 $headers = [
@@ -40,3 +45,6 @@ $heroRepo = $container->get("hero_repository");
 $app->setContainer($container);
 
 $app->run();
+
+require "config/router.php";
+

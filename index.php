@@ -1,12 +1,9 @@
 <?php
-if(!isset($_COOKIE[$config["cookie_name"]])){
-    header("Location: login.php");
-} else {
-    try {
-        require "setup.php";
-        require "game/game.php";
-    }catch (PDOException $e){
-        $page = <<<ERR_CONNECT
+
+try {
+    require "setup.php";
+} catch (PDOException $e) {
+    $page = <<<ERR_CONNECT
 <div class="d">
     Ошибка подключения
 </div>
@@ -15,8 +12,7 @@ if(!isset($_COOKIE[$config["cookie_name"]])){
     {$e->getMessage()}
 </div>
 ERR_CONNECT;
-        $app->getView()->display($page, "ERROR");
-    }
+    $app->getView()->display($page, "ERROR");
 }
 
 ?>

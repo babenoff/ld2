@@ -150,7 +150,7 @@ img {
     color: #000000;
     margin: 1px 1px 1px 1px;
     max-width: 290px;
-    height: 24px;
+    height: 32px;
     font-family: serif;
     font-weight: bold;
 }
@@ -159,6 +159,7 @@ input[placeholder]{
     text-align: center;
     font-weight: bold;
 }
+
 
 .w300 {
     max-width: 300px;

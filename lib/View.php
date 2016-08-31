@@ -35,11 +35,13 @@ class View
         } while ($i < count($headers));
     }
 
-    public function display($page, $data = [], $title = "Лайкдимион 2"){
+    public function display($page, $data = [], $title = "Лайкдимион 2", $rLink = false){
         $data["title"] = $title;
         $header = file_get_contents(ROOT."/res/templates/header5.html");
         $footer = file_get_contents(ROOT."/res/templates/footer.xhtml");
-        ob_start([$this,"replaceLinks"]);
+        if($rLink === true){
+            ob_start([$this,"replaceLinks"]);
+        }
         ob_start([$this, "replaceGenTime"]);
         ob_start([$this, "replaceVersion"]);
         ob_start([$this, "copyrights"]);
@@ -58,7 +60,9 @@ class View
         $tmp = $this->replaceSqlTime($tmp);
         echo $tmp;
         ob_get_contents();
-        ob_end_flush();
+        if(true === $rLink){
+            ob_end_flush();
+        }
         ob_end_flush();
         ob_end_flush();
         ob_end_flush();
