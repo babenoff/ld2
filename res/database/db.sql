@@ -67,7 +67,7 @@ CREATE TABLE `heroes` (
   `hero_inventory` text,
   `hero_bank` text,
   `hero_equip` text,
-  `last_online` timestamp NULL ON UPDATE CURRENT_TIMESTAMP,
+  `offline_time` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `heroes_title_uindex` (`title`),
   KEY `heroes_users_username_fk` (`username`),
@@ -180,4 +180,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-08-31 18:49:34
+-- Dump completed on 2016-08-31 18:51:33
