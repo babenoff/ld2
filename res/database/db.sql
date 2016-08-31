@@ -54,7 +54,7 @@ CREATE TABLE `heroes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(32) NOT NULL,
   `title` varchar(32) NOT NULL,
-  `created` datetime DEFAULT CURRENT_TIMESTAMP,
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `location_id` varchar(32) DEFAULT NULL,
   `hero_level` int(11) DEFAULT '1',
   `hero_char` json DEFAULT NULL,
@@ -67,6 +67,7 @@ CREATE TABLE `heroes` (
   `hero_inventory` text,
   `hero_bank` text,
   `hero_equip` text,
+  `last_online` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `heroes_title_uindex` (`title`),
   KEY `heroes_users_username_fk` (`username`),
@@ -178,4 +179,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-08-31 18:40:53
+-- Dump completed on 2016-08-31 18:42:54
