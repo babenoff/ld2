@@ -7,7 +7,6 @@ body {
     /*background-color: #deceaf;*/
     margin: auto;
     max-width: 1024px;
-    font-size: 14px;
     font-family:arial, sans-serif;
     padding: 3px;
 }
@@ -159,4 +158,8 @@ img {
 input[placeholder]{
     text-align: center;
     font-weight: bold;
+}
+
+.w300 {
+    max-width: 300px;
 }

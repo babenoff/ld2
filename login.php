@@ -6,13 +6,12 @@
 require "setup.php";
 
 setcookie($config["cookie_name"], "", time() - 3600);
-$page = "<div class='card-block'>";
+$page = "";
 if (isset($_POST["username"])) {
 
 } else {
-    $page = <<<LOGIN
-<h2 class='card-header'>{$config["gName"]}</h2>
-<form class="login_form" action="login.php" method="post">
+    $page .= <<<LOGIN
+<form class="center w300 card card-inverse card-success text-xs-center" action="login.php" method="post">
     <div>Логин:</div>
     <div>
         <input class="form-control" name="username" placeholder="Логин" />
@@ -29,5 +28,5 @@ if (isset($_POST["username"])) {
 <a class="strong" href="/?"></a>
 LOGIN;
 }
-$page .="</div>";
+
 $app->getView()->display($page);

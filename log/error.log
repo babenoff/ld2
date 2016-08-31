@@ -5293,3 +5293,9 @@ PHP message: PHP   1. {main}() /var/www/ld2/reg.php:0" while reading response he
 2016/08/31 21:03:52 [error] 22130#22130: *323 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: tmp in /var/www/ld2/reg.php on line 38
 PHP message: PHP Stack trace:
 PHP message: PHP   1. {main}() /var/www/ld2/reg.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /reg.php?&aa12bf HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
+2016/08/31 21:10:24 [error] 22130#22130: *353 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: page in /var/www/ld2/login.php on line 27
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/login.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /login.php HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/08/31 21:10:25 [error] 22130#22130: *353 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: page in /var/www/ld2/login.php on line 27
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/login.php:0" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /login.php HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login.php"
