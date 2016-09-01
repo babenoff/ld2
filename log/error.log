@@ -6041,3 +6041,258 @@ Stack trace:
 #6 /var/www/ld2/index.php(4): require('/var/www/ld2/se...')
 #7 {main}
   thrown in /var/www/ld2/vendor/twig/twig/lib/Twig/Environment.php on line 1093" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /login HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/reg"
+2016/09/02 01:22:17 [error] 2725#2725: *359 FastCGI sent in stderr: "PHP message: PHP Warning:  Illegal string offset 'errors' in /var/www/ld2/site/SiteController.php on line 214
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0
+PHP message: PHP   2. require() /var/www/ld2/index.php:4
+PHP message: PHP   3. require() /var/www/ld2/setup.php:13
+PHP message: PHP   4. require() /var/www/ld2/app.php:42
+PHP message: PHP   5. LD2Controller\SiteController->registrationAction() /var/www/ld2/config/router.php:38
+PHP message: PHP   6. LD2Controller\SiteController->regProcess($params = *uninitialized*) /var/www/ld2/site/SiteController.php:114" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "POST /reg HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/reg"
+2016/09/02 01:22:17 [error] 2725#2725: *359 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Cannot use string offset as an array in /var/www/ld2/site/SiteController.php:214
+Stack trace:
+#0 /var/www/ld2/site/SiteController.php(114): LD2Controller\SiteController->regProcess(Array)
+#1 /var/www/ld2/config/router.php(38)" while reading upstream, client: 127.0.0.1, server: mysite.local, request: "POST /reg HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/reg"
+2016/09/02 01:22:17 [error] 2725#2725: *359 FastCGI sent in stderr: ": LD2Controller\SiteController->registrationAction()
+#2 /var/www/ld2/app.php(42): require('/var/www/ld2/co...')
+#3 /var/www/ld2/setup.php(13): require('/var/www/ld2/ap...')
+#4 /var/www/ld2/index.php(4): require('/var/www/ld2/se...')
+#5 {main}
+  thrown in /var/www/ld2/site/SiteController.php on line 214" while reading upstream, client: 127.0.0.1, server: mysite.local, request: "POST /reg HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/reg"
+2016/09/02 01:25:01 [error] 2727#2727: *364 FastCGI sent in stderr: "PHP message: PHP Warning:  Illegal string offset 'errs' in /var/www/ld2/site/SiteController.php on line 214
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0
+PHP message: PHP   2. require() /var/www/ld2/index.php:4
+PHP message: PHP   3. require() /var/www/ld2/setup.php:13
+PHP message: PHP   4. require() /var/www/ld2/app.php:42
+PHP message: PHP   5. LD2Controller\SiteController->registrationAction() /var/www/ld2/config/router.php:38
+PHP message: PHP   6. LD2Controller\SiteController->regProcess($params = *uninitialized*) /var/www/ld2/site/SiteController.php:114" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "POST /reg HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/reg"
+2016/09/02 01:25:01 [error] 2727#2727: *364 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Cannot use string offset as an array in /var/www/ld2/site/SiteController.php:214
+Stack trace:
+#0 /var/www/ld2/site/SiteController.php(114): LD2Controller\SiteController->regProcess(Array)
+#1 /var/www/ld2/config/router.php(38): LD2Con" while reading upstream, client: 127.0.0.1, server: mysite.local, request: "POST /reg HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/reg"
+2016/09/02 01:25:01 [error] 2727#2727: *364 FastCGI sent in stderr: "troller\SiteController->registrationAction()
+#2 /var/www/ld2/app.php(42): require('/var/www/ld2/co...')
+#3 /var/www/ld2/setup.php(13): require('/var/www/ld2/ap...')
+#4 /var/www/ld2/index.php(4): require('/var/www/ld2/se...')
+#5 {main}
+  thrown in /var/www/ld2/site/SiteController.php on line 214" while reading upstream, client: 127.0.0.1, server: mysite.local, request: "POST /reg HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/reg"
+2016/09/02 01:25:44 [error] 2727#2727: *368 FastCGI sent in stderr: "PHP message: PHP Warning:  Illegal string offset 'errs' in /var/www/ld2/site/SiteController.php on line 214
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0
+PHP message: PHP   2. require() /var/www/ld2/index.php:4
+PHP message: PHP   3. require() /var/www/ld2/setup.php:13
+PHP message: PHP   4. require() /var/www/ld2/app.php:42
+PHP message: PHP   5. LD2Controller\SiteController->registrationAction() /var/www/ld2/config/router.php:38
+PHP message: PHP   6. LD2Controller\SiteController->regProcess($params = *uninitialized*) /var/www/ld2/site/SiteController.php:114" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "POST /reg HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/reg"
+2016/09/02 01:25:44 [error] 2727#2727: *368 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Cannot use string offset as an array in /var/www/ld2/site/SiteController.php:214
+Stack trace:
+#0 /var/www/ld2/site/SiteController.php(114): LD2Controller\SiteController->regProcess(Array)
+#1 /var/www/ld2/config/router.php(38): LD2Con" while reading upstream, client: 127.0.0.1, server: mysite.local, request: "POST /reg HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/reg"
+2016/09/02 01:25:44 [error] 2727#2727: *368 FastCGI sent in stderr: "troller\SiteController->registrationAction()
+#2 /var/www/ld2/app.php(42): require('/var/www/ld2/co...')
+#3 /var/www/ld2/setup.php(13): require('/var/www/ld2/ap...')
+#4 /var/www/ld2/index.php(4): require('/var/www/ld2/se...')
+#5 {main}
+  thrown in /var/www/ld2/site/SiteController.php on line 214" while reading upstream, client: 127.0.0.1, server: mysite.local, request: "POST /reg HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/reg"
+2016/09/02 01:27:14 [error] 2727#2727: *372 FastCGI sent in stderr: "PHP message: PHP Warning:  Illegal string offset 'errs' in /var/www/ld2/site/SiteController.php on line 216
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0
+PHP message: PHP   2. require() /var/www/ld2/index.php:4
+PHP message: PHP   3. require() /var/www/ld2/setup.php:13
+PHP message: PHP   4. require() /var/www/ld2/app.php:42
+PHP message: PHP   5. LD2Controller\SiteController->registrationAction() /var/www/ld2/config/router.php:38
+PHP message: PHP   6. LD2Controller\SiteController->regProcess($params = *uninitialized*) /var/www/ld2/site/SiteController.php:116" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "POST /reg HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/reg"
+2016/09/02 01:27:14 [error] 2727#2727: *372 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Cannot use string offset as an array in /var/www/ld2/site/SiteController.php:216
+Stack trace:
+#0 /var/www/ld2/site/SiteController.php(116): LD2Controller" while reading upstream, client: 127.0.0.1, server: mysite.local, request: "POST /reg HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/reg"
+2016/09/02 01:27:15 [error] 2727#2727: *372 FastCGI sent in stderr: "\SiteController->regProcess(Array)
+#1 /var/www/ld2/config/router.php(38): LD2Controller\SiteController->registrationAction()
+#2 /var/www/ld2/app.php(42): require('/var/www/ld2/co...')
+#3 /var/www/ld2/setup.php(13): require('/var/www/ld2/ap...')
+#4 /var/www/ld2/index.php(4): require('/var/www/ld2/se...')
+#5 {main}
+  thrown in /var/www/ld2/site/SiteController.php on line 216" while reading upstream, client: 127.0.0.1, server: mysite.local, request: "POST /reg HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/reg"
+2016/09/02 01:35:00 [error] 2727#2727: *403 FastCGI sent in stderr: "PHP message: PHP Warning:  preg_match(): Compilation failed: invalid range in character class at offset 52 in /var/www/ld2/site/SiteController.php on line 135
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0
+PHP message: PHP   2. require() /var/www/ld2/index.php:4
+PHP message: PHP   3. require() /var/www/ld2/setup.php:13
+PHP message: PHP   4. require() /var/www/ld2/app.php:42
+PHP message: PHP   5. LD2Controller\SiteController->registrationAction() /var/www/ld2/config/router.php:38
+PHP message: PHP   6. LD2Controller\SiteController->regProcess($params = *uninitialized*) /var/www/ld2/site/SiteController.php:116
+PHP message: PHP   7. preg_match(*uninitialized*, *uninitialized*) /var/www/ld2/site/SiteController.php:135" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "POST /reg HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/reg"
+2016/09/02 01:35:58 [error] 2727#2727: *408 FastCGI sent in stderr: "PHP message: PHP Warning:  preg_match(): Unknown modifier 'g' in /var/www/ld2/site/SiteController.php on line 135
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0
+PHP message: PHP   2. require() /var/www/ld2/index.php:4
+PHP message: PHP   3. require() /var/www/ld2/setup.php:13
+PHP message: PHP   4. require() /var/www/ld2/app.php:42
+PHP message: PHP   5. LD2Controller\SiteController->registrationAction() /var/www/ld2/config/router.php:38
+PHP message: PHP   6. LD2Controller\SiteController->regProcess($params = *uninitialized*) /var/www/ld2/site/SiteController.php:116
+PHP message: PHP   7. preg_match(*uninitialized*, *uninitialized*) /var/www/ld2/site/SiteController.php:135" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "POST /reg HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/reg"
+2016/09/02 01:36:50 [error] 2727#2727: *412 FastCGI sent in stderr: "PHP message: PHP Warning:  preg_match(): Unknown modifier 'g' in /var/www/ld2/site/SiteController.php on line 135
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0
+PHP message: PHP   2. require() /var/www/ld2/index.php:4
+PHP message: PHP   3. require() /var/www/ld2/setup.php:13
+PHP message: PHP   4. require() /var/www/ld2/app.php:42
+PHP message: PHP   5. LD2Controller\SiteController->registrationAction() /var/www/ld2/config/router.php:38
+PHP message: PHP   6. LD2Controller\SiteController->regProcess($params = *uninitialized*) /var/www/ld2/site/SiteController.php:116
+PHP message: PHP   7. preg_match(*uninitialized*, *uninitialized*) /var/www/ld2/site/SiteController.php:135" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "POST /reg HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/reg"
+2016/09/02 01:37:24 [error] 2727#2727: *417 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: code in /var/www/ld2/site/SiteController.php on line 138
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0
+PHP message: PHP   2. require() /var/www/ld2/index.php:4
+PHP message: PHP   3. require() /var/www/ld2/setup.php:13
+PHP message: PHP   4. require() /var/www/ld2/app.php:42
+PHP message: PHP   5. LD2Controller\SiteController->registrationAction() /var/www/ld2/config/router.php:38
+PHP message: PHP   6. LD2Controller\SiteController->regProcess($params = *uninitialized*) /var/www/ld2/site/SiteController.php:116" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "POST /reg HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/reg"
+2016/09/02 01:38:04 [error] 2727#2727: *422 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: captcha in /var/www/ld2/site/SiteController.php on line 138
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0
+PHP message: PHP   2. require() /var/www/ld2/index.php:4
+PHP message: PHP   3. require() /var/www/ld2/setup.php:13
+PHP message: PHP   4. require() /var/www/ld2/app.php:42
+PHP message: PHP   5. LD2Controller\SiteController->registrationAction() /var/www/ld2/config/router.php:38
+PHP message: PHP   6. LD2Controller\SiteController->regProcess($params = *uninitialized*) /var/www/ld2/site/SiteController.php:116" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "POST /reg HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/reg"
+2016/09/02 01:38:38 [error] 2727#2727: *427 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: captcha in /var/www/ld2/site/SiteController.php on line 133
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0
+PHP message: PHP   2. require() /var/www/ld2/index.php:4
+PHP message: PHP   3. require() /var/www/ld2/setup.php:13
+PHP message: PHP   4. require() /var/www/ld2/app.php:42
+PHP message: PHP   5. LD2Controller\SiteController->registrationAction() /var/www/ld2/config/router.php:38
+PHP message: PHP   6. LD2Controller\SiteController->regProcess($params = *uninitialized*) /var/www/ld2/site/SiteController.php:116" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "POST /reg HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/reg"
+2016/09/02 01:38:44 [error] 2727#2727: *427 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: captcha in /var/www/ld2/site/SiteController.php on line 139
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0
+PHP message: PHP   2. require() /var/www/ld2/index.php:4
+PHP message: PHP   3. require() /var/www/ld2/setup.php:13
+PHP message: PHP   4. require() /var/www/ld2/app.php:42
+PHP message: PHP   5. LD2Controller\SiteController->registrationAction() /var/www/ld2/config/router.php:38
+PHP message: PHP   6. LD2Controller\SiteController->regProcess($params = *uninitialized*) /var/www/ld2/site/SiteController.php:116" while reading upstream, client: 127.0.0.1, server: mysite.local, request: "POST /reg HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/reg"
+2016/09/02 01:40:45 [error] 2727#2727: *432 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: captcha in /var/www/ld2/site/SiteController.php on line 133
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0
+PHP message: PHP   2. require() /var/www/ld2/index.php:4
+PHP message: PHP   3. require() /var/www/ld2/setup.php:13
+PHP message: PHP   4. require() /var/www/ld2/app.php:42
+PHP message: PHP   5. LD2Controller\SiteController->registrationAction() /var/www/ld2/config/router.php:38
+PHP message: PHP   6. LD2Controller\SiteController->regProcess($params = *uninitialized*) /var/www/ld2/site/SiteController.php:116" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "POST /reg HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/reg"
+2016/09/02 01:40:47 [error] 2727#2727: *432 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: captcha in /var/www/ld2/site/SiteController.php on line 139
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0
+PHP message: PHP   2. require() /var/www/ld2/index.php:4
+PHP message: PHP   3. require() /var/www/ld2/setup.php:13
+PHP message: PHP   4. require() /var/www/ld2/app.php:42
+PHP message: PHP   5. LD2Controller\SiteController->registrationAction() /var/www/ld2/config/router.php:38
+PHP message: PHP   6. LD2Controller\SiteController->regProcess($params = *uninitialized*) /var/www/ld2/site/SiteController.php:116" while reading upstream, client: 127.0.0.1, server: mysite.local, request: "POST /reg HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/reg"
+2016/09/02 01:41:30 [error] 2727#2727: *437 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: captcha in /var/www/ld2/site/SiteController.php on line 133
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0
+PHP message: PHP   2. require() /var/www/ld2/index.php:4
+PHP message: PHP   3. require() /var/www/ld2/setup.php:13
+PHP message: PHP   4. require() /var/www/ld2/app.php:42
+PHP message: PHP   5. LD2Controller\SiteController->registrationAction() /var/www/ld2/config/router.php:38
+PHP message: PHP   6. LD2Controller\SiteController->regProcess($params = *uninitialized*) /var/www/ld2/site/SiteController.php:116" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "POST /reg HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/reg"
+2016/09/02 01:41:40 [error] 2727#2727: *437 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: captcha in /var/www/ld2/site/SiteController.php on line 139
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0
+PHP message: PHP   2. require() /var/www/ld2/index.php:4
+PHP message: PHP   3. require() /var/www/ld2/setup.php:13
+PHP message: PHP   4. require() /var/www/ld2/app.php:42
+PHP message: PHP   5. LD2Controller\SiteController->registrationAction() /var/www/ld2/config/router.php:38
+PHP message: PHP   6. LD2Controller\SiteController->regProcess($params = *uninitialized*) /var/www/ld2/site/SiteController.php:116" while reading upstream, client: 127.0.0.1, server: mysite.local, request: "POST /reg HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/reg"
+2016/09/02 01:42:47 [error] 2727#2727: *441 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: captcha in /var/www/ld2/site/SiteController.php on line 133
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0
+PHP message: PHP   2. require() /var/www/ld2/index.php:4
+PHP message: PHP   3. require() /var/www/ld2/setup.php:13
+PHP message: PHP   4. require() /var/www/ld2/app.php:42
+PHP message: PHP   5. LD2Controller\SiteController->registrationAction() /var/www/ld2/config/router.php:38
+PHP message: PHP   6. LD2Controller\SiteController->regProcess($params = *uninitialized*) /var/www/ld2/site/SiteController.php:116" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "POST /reg HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/reg"
+2016/09/02 01:42:48 [error] 2727#2727: *441 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: captcha in /var/www/ld2/site/SiteController.php on line 139
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0
+PHP message: PHP   2. require() /var/www/ld2/index.php:4
+PHP message: PHP   3. require() /var/www/ld2/setup.php:13
+PHP message: PHP   4. require() /var/www/ld2/app.php:42
+PHP message: PHP   5. LD2Controller\SiteController->registrationAction() /var/www/ld2/config/router.php:38
+PHP message: PHP   6. LD2Controller\SiteController->regProcess($params = *uninitialized*) /var/www/ld2/site/SiteController.php:116" while reading upstream, client: 127.0.0.1, server: mysite.local, request: "POST /reg HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/reg"
+2016/09/02 01:43:01 [error] 2727#2727: *445 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught TypeError: Return value of LD2\Repository\SessionRepository::findBySid() must be of the type array, string returned in /var/www/ld2/lib/Repository/SessionRepository.php:73
+Stack trace:
+#0 /var/www/ld2/lib/Repository/SessionRepository.php(91): LD2\Repository\SessionRepository->findBySid('ajli05lr8j17olt...')
+#1 [internal function]: LD2\Repository\SessionRepository->read('ajli05lr8j17olt...')
+#2 /var/www/ld2/app.php(23): session_start()
+#3 /var/www/ld2/setup.php(13): require('/var/www/ld2/ap...')
+#4 /var/www/ld2/index.php(4): require('/var/www/ld2/se...')
+#5 {main}
+  thrown in /var/www/ld2/lib/Repository/SessionRepository.php on line 73" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "POST /reg HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/reg"
+2016/09/02 01:44:01 [error] 2727#2727: *447 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: captcha in /var/www/ld2/site/SiteController.php on line 133
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0
+PHP message: PHP   2. require() /var/www/ld2/index.php:4
+PHP message: PHP   3. require() /var/www/ld2/setup.php:13
+PHP message: PHP   4. require() /var/www/ld2/app.php:42
+PHP message: PHP   5. LD2Controller\SiteController->registrationAction() /var/www/ld2/config/router.php:38
+PHP message: PHP   6. LD2Controller\SiteController->regProcess($params = *uninitialized*) /var/www/ld2/site/SiteController.php:116" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "POST /reg HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/reg"
+2016/09/02 01:44:04 [error] 2727#2727: *447 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: captcha in /var/www/ld2/site/SiteController.php on line 139
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0
+PHP message: PHP   2. require() /var/www/ld2/index.php:4
+PHP message: PHP   3. require() /var/www/ld2/setup.php:13
+PHP message: PHP   4. require() /var/www/ld2/app.php:42
+PHP message: PHP   5. LD2Controller\SiteController->registrationAction() /var/www/ld2/config/router.php:38
+PHP message: PHP   6. LD2Controller\SiteController->regProcess($params = *uninitialized*) /var/www/ld2/site/SiteController.php:116" while reading upstream, client: 127.0.0.1, server: mysite.local, request: "POST /reg HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/reg"
+2016/09/02 01:44:49 [error] 2727#2727: *456 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: username in /var/www/ld2/site/SiteController.php on line 149
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0
+PHP message: PHP   2. require() /var/www/ld2/index.php:4
+PHP message: PHP   3. require() /var/www/ld2/setup.php:13
+PHP message: PHP   4. require() /var/www/ld2/app.php:42
+PHP message: PHP   5. LD2Controller\SiteController->registrationAction() /var/www/ld2/config/router.php:38
+PHP message: PHP   6. LD2Controller\SiteController->regProcess($params = *uninitialized*) /var/www/ld2/site/SiteController.php:116" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "POST /reg HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/reg"
+2016/09/02 01:44:49 [error] 2727#2727: *456 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Cannot use object of type stdClass as array in /var/www/ld2/site/SiteController.php:156
+Stack trace:
+#0 /var/www/ld2/site/SiteController.php(116): LD2Controller\SiteController->regProcess(Array)
+#1 /var/www/ld2/config/router.php(38): LD2Controller\SiteController->registrationAction()
+#2 /var/www/ld2/app.php(42): require('/var/www/ld2/co...')
+#3 /var/www/ld2/setup.php(13): require('/var/www/ld2/ap...')
+#4 /var/www/ld2/index.php(4): require('/var/www/ld2/se...')
+#5 {main}
+  thrown in /var/www/ld2/site/SiteController.php on line 156" while reading upstream, client: 127.0.0.1, server: mysite.local, request: "POST /reg HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/reg"
+2016/09/02 01:46:03 [error] 2727#2727: *458 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: username in /var/www/ld2/site/SiteController.php on line 149
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0
+PHP message: PHP   2. require() /var/www/ld2/index.php:4
+PHP message: PHP   3. require() /var/www/ld2/setup.php:13
+PHP message: PHP   4. require() /var/www/ld2/app.php:42
+PHP message: PHP   5. LD2Controller\SiteController->registrationAction() /var/www/ld2/config/router.php:38
+PHP message: PHP   6. LD2Controller\SiteController->regProcess($params = *uninitialized*) /var/www/ld2/site/SiteController.php:116" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "POST /reg HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/reg"
+2016/09/02 01:46:03 [error] 2727#2727: *458 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Cannot use object of type stdClass as array in /var/www/ld2/site/SiteController.php:156
+Stack trace:
+#0 /var/www/ld2/site/SiteController.php(116): LD2Controller\SiteController->regProcess(Array)
+#1 /var/www/ld2/config/router.php(38): LD2Controller\SiteController->registrationAction()
+#2 /var/www/ld2/app.php(42): require('/var/www/ld2/co...')
+#3 /var/www/ld2/setup.php(13): require('/var/www/ld2/ap...')
+#4 /var/www/ld2/index.php(4): require('/var/www/ld2/se...')
+#5 {main}
+  thrown in /var/www/ld2/site/SiteController.php on line 156" while reading upstream, client: 127.0.0.1, server: mysite.local, request: "POST /reg HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/reg"
+2016/09/02 01:47:11 [error] 2727#2727: *462 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: username in /var/www/ld2/site/SiteController.php on line 149
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0
+PHP message: PHP   2. require() /var/www/ld2/index.php:4
+PHP message: PHP   3. require() /var/www/ld2/setup.php:13
+PHP message: PHP   4. require() /var/www/ld2/app.php:42
+PHP message: PHP   5. LD2Controller\SiteController->registrationAction() /var/www/ld2/config/router.php:38
+PHP message: PHP   6. LD2Controller\SiteController->regProcess($params = *uninitialized*) /var/www/ld2/site/SiteController.php:116" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "POST /reg HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/reg"
+2016/09/02 01:47:11 [error] 2727#2727: *462 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Cannot use object of type stdClass as array in /var/www/ld2/site/SiteController.php:156
+Stack trace:
+#0 /var/www/ld2/site/SiteController.php(116): LD2Controller\SiteController->regProcess(Array)
+#1 /var/www/ld2/config/router.php(38): LD2Controller\SiteController->registrationAction()
+#2 /var/www/ld2/app.php(42): require('/var/www/ld2/co...')
+#3 /var/www/ld2/setup.php(13): require('/var/www/ld2/ap...')
+#4 /var/www/ld2/index.php(4): require('/var/www/ld2/se...')
+#5 {main}
+  thrown in /var/www/ld2/site/SiteController.php on line 156" while reading upstream, client: 127.0.0.1, server: mysite.local, request: "POST /reg HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/reg"

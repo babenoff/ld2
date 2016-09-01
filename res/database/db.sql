@@ -57,8 +57,10 @@ CREATE TABLE `heroes` (
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `location_id` varchar(32) DEFAULT NULL,
   `hero_level` int(11) DEFAULT '1',
+  `exp_points` int(11) DEFAULT '0',
   `hero_char` text,
   `hero_stats` text,
+  `hero_params` text,
   `hero_status` text,
   `hero_timers` text,
   `hero_war` text,
@@ -74,7 +76,7 @@ CREATE TABLE `heroes` (
   KEY `heroes_location_id_index` (`location_id`),
   CONSTRAINT `heroes_locations_location_id_fk` FOREIGN KEY (`location_id`) REFERENCES `locations` (`location_id`) ON DELETE SET NULL ON UPDATE CASCADE,
   CONSTRAINT `heroes_users_username_fk` FOREIGN KEY (`username`) REFERENCES `users` (`username`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -83,6 +85,7 @@ CREATE TABLE `heroes` (
 
 LOCK TABLES `heroes` WRITE;
 /*!40000 ALTER TABLE `heroes` DISABLE KEYS */;
+INSERT INTO `heroes` VALUES (2,'mbabenko21','babenoff','2016-09-01 22:49:58',NULL,1,5,'a:4:{i:0;i:20;i:1;i:20;i:2;i:20;i:3;i:20;}','a:3:{i:0;i:10;i:1;i:10;i:2;i:10;}','a:0:{}','a:3:{s:5:\"ghost\";b:0;s:4:\"crim\";b:0;s:5:\"rider\";b:0;}','a:0:{}','a:0:{}','a:0:{}','a:0:{}','a:0:{}','a:0:{}','a:0:{}',NULL);
 /*!40000 ALTER TABLE `heroes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -103,7 +106,7 @@ CREATE TABLE `locations` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `locations_location_id_uindex` (`location_id`),
   KEY `locations_title_index` (`title`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -137,6 +140,7 @@ CREATE TABLE `sessions` (
 
 LOCK TABLES `sessions` WRITE;
 /*!40000 ALTER TABLE `sessions` DISABLE KEYS */;
+INSERT INTO `sessions` VALUES ('ajli05lr8j17oltg3qfv96mgc6','2016-09-01 22:55:03','captcha|i:1321;'),('d78jp6i21hl1r3vldimvqc7q72','2016-08-31 21:30:56','');
 /*!40000 ALTER TABLE `sessions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -153,13 +157,13 @@ CREATE TABLE `users` (
   `email` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
   `role` int(11) DEFAULT '1',
-  `created` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_username_IDX` (`username`),
   UNIQUE KEY `users_email_IDX` (`email`),
   KEY `users_role_index` (`role`),
   KEY `users_role_pk` (`role`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -168,6 +172,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (2,'mbabenko21','mbabenko21@gmail.com','$2y$10$Nzmb5fntJoZKk5uDJWFDZ.WkYW9rg4k4G5mkPD2R73OG2npEuArsq',0,'2016-09-01 22:49:58');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -180,4 +185,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-08-31 18:51:33
+-- Dump completed on 2016-09-02  1:51:25

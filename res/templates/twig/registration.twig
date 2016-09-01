@@ -6,7 +6,13 @@
 {% extends 'layout.twig' %}
 
 {% block errors %}
-
+    {% if errs != false %}
+        <div class="nav-menu list-group text-xl-center">
+            {% for error in errs %}
+                <div class="alert alert-danger">{{ error }}</div>
+            {% endfor %}
+        </div>
+    {% endif %}
 {% endblock %}
 {% block page_header %}
     <div class="card-header text-xl-center text-muted">
@@ -15,35 +21,45 @@
 {% endblock %}
 {% block page_content %}
     {% if regOk %}
-
+        <div class="panel panel-heading">
+            Регистрация завершена
+        </div>
+        <div class="panel panel-body">
+            Логин: <strong>{{ username }}</strong>
+            Пароль: <strong>{{ password }}</strong>
+        </div>
     {% else %}
         <form class="form-signin" action="{{ path('registration') }}" method="post">
-            <label for="inputLogin" class="sr-only">Логин</label>
-            <input type="text" id="inputLogin" name="username" class="form-control" placeholder="Логин" required
+            <label for="inputEmail" class="sr-only">Е-Mail</label>
+            <input type="email" id="inputEogin" name="email" class="form-control" placeholder="Е-Mail" required
                    autofocus>
             <label for="inputPassword" class="sr-only">Пароль</label>
             <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Пароль"
                    required>
             <label for="inputPasswordC" class="sr-only">Повторите пароль</label>
-            <input type="password" id="inputPasswordC" name="password" class="form-control"
+            <input type="password" id="inputPasswordC" name="password_confirm" class="form-control"
                    placeholder="Повторите пароль" required>
+            <div class="jumbotron-hr"></div>
+            <label for="inputNickname" class="sr-only">Имя персонажа (будет видно в игре)</label>
+            <input type="text" id="inputNickname" name="nickname" class="form-control" placeholder="Имя персонажа"
+                   required>
             <div class="captcha text-xl-center"><img src="{{ captcha(random(0000,9999)) }}"/></div>
             <div class="clearfix"></div>
-            <label for="inputPasswordC" class="sr-only">код с картинки</label>
-            <input type="text" id="inputCaptcha" name="username" class="form-control" placeholder="код с картинки"
+            <label for="inputCaptcha" class="sr-only">код с картинки</label>
+            <input type="text" id="inputCaptcha" name="captcha" class="form-control" placeholder="код с картинки"
                    required>
             {#<div class="checkbox">
                 <label>
                     <input type="checkbox" value="remember-me"> Remember me
                 </label>
             </div>#}
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Регистрация</button>
+            <button class="btn btn-lg btn-outline-primary btn-block" type="submit">Регистрация</button>
         </form>
-        <div class="nav-menu">
-            <div class="list-group text-xl-center">
-                <a class="list-group-item list-group-item-action text-uppercase"
-                   href="{{ path('base') }}">на главную</a>
-            </div>
-        </div>
     {% endif %}
+    <div class="nav-menu">
+        <div class="list-group text-xl-center">
+            <a class="list-group-item list-group-item-action text-uppercase"
+               href="{{ path('base') }}">на главную</a>
+        </div>
+    </div>
 {% endblock %}

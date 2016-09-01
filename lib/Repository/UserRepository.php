@@ -83,13 +83,13 @@ class UserRepository extends BaseRepository implements IUserRepository
      */
     public function remove(array $data):bool
     {
-        if(isset($data["id"])){
+        if(isset($data["username"])){
             $sql = $this->getPdo()->queryBuilder()->delete($this->getTables());
-            $sql->setWhere(new Condition(Condition::EQ, new Field("id"), $data["id"]));
+            $sql->setWhere(new Condition(Condition::EQ, new Field("username"), $data["username"]));
             $query = $this->getPdo()->prepare($sql->sql());
             return $query->execute($sql->parameters());
         } else {
-            $mess = "user data has no containts uid (in delete)";
+            $mess = "user data has no containts username (in delete)";
             throw new UserRepositoryException($mess);
         }
     }

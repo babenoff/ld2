@@ -70,7 +70,7 @@ class SessionRepository extends BaseRepository implements \SessionHandlerInterfa
         $q = $this->getPdo()->prepare($sql->sql());
         $q->execute($sql->parameters());
         $session = $q->fetchAll(\PDO::FETCH_ASSOC);
-        return $session;
+        return (count($session) > 0) ? $session[0] : [];
     }
 
     /**
@@ -89,7 +89,8 @@ class SessionRepository extends BaseRepository implements \SessionHandlerInterfa
     public function read($sid)
     {
         $session = $this->findBySid($sid);
-        return (isset($session["session_data"])) ? $session["session_data"] : "";
+
+        return (isset($session["sd"])) ? $session["sd"] : "";
     }
 
 

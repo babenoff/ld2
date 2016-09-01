@@ -85,6 +85,11 @@ class HeroRepository extends BaseRepository implements IHeroRepository
     {
         if(isset($data["id"])) {
             try {
+                foreach ($data as $k => $v){
+                    if(is_array($v)){
+                        $data[$k] = serialize($v);
+                    }
+                }
                 $res = $this->_update($data, new Condition(Condition::EQ, new Field("id"), $data["id"]));
                 return $res;
             } catch (RepositoryException $e) {
@@ -129,9 +134,14 @@ class HeroRepository extends BaseRepository implements IHeroRepository
     {
         try{
             $this->getHeroByTitle($data["title"]);
-            throw new HeroRepositoryException(sprintf("hero whit title %s already exists", $hero["title"]));
+            throw new HeroRepositoryException(sprintf("hero whit title %s already exists", $data["title"]));
         } catch (HeroRepositoryException $e){
             $in = $this->getPdo()->queryBuilder()->insert($this->getTables());
+            foreach ($data as $k => $v){
+                if(is_array($v)){
+                    $data[$k] = serialize($v);
+                }
+            }
             $in->setValues($data);
             $stmt = $this->getPdo()->prepare($in->sql());
             $params = $in->parameters();
