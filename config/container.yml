@@ -20,6 +20,8 @@ services:
       - [setProfiling, []]
   evd:
     class: 'LD2\EventDispatcher'
+  captcha:
+    class: 'Gregwar\Captcha\CaptchaBuilder'
   base_pdo_evd_service:
     abstract: true
     calls:

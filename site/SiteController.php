@@ -6,6 +6,7 @@
 namespace LD2Controller;
 
 
+use Gregwar\Captcha\CaptchaBuilder;
 use LD2\BaseController;
 
 class SiteController extends BaseController
@@ -35,6 +36,7 @@ LOGIN;
     }
 
     public function registrationAction(){
+
         $page = "";
         $errors = [];
         $tmp = "";
@@ -43,6 +45,12 @@ LOGIN;
             $heroRepo = $this->getApp()->getContainer()->get("hero_repository");
             $tmp .= "";
         }  else {
+            /** @var CaptchaBuilder $captcha */
+            $captcha = $this->getApp()->getContainer()->get("captcha");
+            $code = random_int(0,9999);
+            $captcha->setPhrase($code);
+            $captcha->build();
+            $_SESSION["captcha"] = $captcha;
             $tmp .= <<<REG_
 <form class="login_form" action="login.php" method="post">
     <div>Логин:</div>
@@ -60,6 +68,10 @@ LOGIN;
     <div>Имя персонажа (будет видно в игре):</div>
     <div>
         <input class="ram form-control" name="title" placeholder="Имя персонажа" />
+    </div>
+    <div>
+        <img src="{$captcha->inline()}" />
+        <input class="ram form-control" name="captcha" placeholder="Код с картинки" />
     </div>
     <div>
         <input class="button btn-primary" type="submit" value="Регистрация" />
