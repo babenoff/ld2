@@ -122,11 +122,11 @@ class View
         $a = "";
         foreach ($authors as $author){
             if($a == ""){
-                $a .= $author->name."&lt;".$author->email."&gt;";
+                $a .= $author->nickname;
             } else {
-                $a .= "<br />".$author->name."&".$author->email.">";
+                $a .= ", ".$author->nickname.">";
             }
         }
-        return str_replace("%copyrights%", $a, $buffer);
+        return str_replace("%copyrights%", "&copy; <b>".$a."</b>, 2016", $buffer);
     }
 }
