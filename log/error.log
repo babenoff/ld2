@@ -5669,3 +5669,375 @@ Stack trace:
 #9 {main}
   thrown in /var/www/ld2/vendor/symfony/routing/Gen" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
 2016/09/01 08:18:59 [error] 2704#2704: *1 open() "/var/www/ld2/favicon.ico" failed (2: No such file or directory), client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", host: "ld2.my", referrer: "http://ld2.my/"
+2016/09/01 20:39:33 [error] 2724#2724: *1 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Symfony\Component\DependencyInjection\Definition::setArguments() must be of the type array, string given, called in /var/www/ld2/vendor/symfony/dependency-injection/Loader/YamlFileLoader.php on line 242 and defined in /var/www/ld2/vendor/symfony/dependency-injection/Definition.php:149
+Stack trace:
+#0 /var/www/ld2/vendor/symfony/dependency-injection/Loader/YamlFileLoader.php(242): Symfony\Component\DependencyInjection\Definition->setArguments('/res/templates')
+#1 /var/www/ld2/vendor/symfony/dependency-injection/Loader/YamlFileLoader.php(150): Symfony\Component\DependencyInjection\Loader\YamlFileLoader->parseDefinition('twig', Array, 'container.yml')
+#2 /var/www/ld2/vendor/symfony/dependency-injection/Loader/YamlFileLoader.php(95): Symfony\Component\DependencyInjection\Loader\YamlFileLoader->parseDefinitions(Array, 'container.yml')
+#3 /var/www/ld2/config/container.php(12): Symfony\Component\DependencyInjection\Loader\YamlFileLoader->loa" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/09/01 20:39:33 [error] 2724#2724: *1 open() "/var/www/ld2/favicon.ico" failed (2: No such file or directory), client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", host: "ld2.my", referrer: "http://ld2.my/"
+2016/09/01 21:36:28 [error] 2724#2724: *9 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Twig_Error_Loader: The "/res/templates" directory does not exist. in /var/www/ld2/vendor/twig/twig/lib/Twig/Loader/Filesystem.php:71
+Stack trace:
+#0 /var/www/ld2/vendor/twig/twig/lib/Twig/Loader/Filesystem.php(56): Twig_Loader_Filesystem->addPath('/res/templates')
+#1 /var/www/ld2/vendor/twig/twig/lib/Twig/Loader/Filesystem.php(30): Twig_Loader_Filesystem->setPaths(Array)
+#2 [internal function]: Twig_Loader_Filesystem->__construct('/res/templates')
+#3 /var/www/ld2/vendor/symfony/dependency-injection/ContainerBuilder.php(846): ReflectionClass->newInstanceArgs(Array)
+#4 /var/www/ld2/vendor/symfony/dependency-injection/ContainerBuilder.php(417): Symfony\Component\DependencyInjection\ContainerBuilder->createService(Object(Symfony\Component\DependencyInjection\Definition), 'twig_loader')
+#5 /var/www/ld2/vendor/symfony/dependency-injection/ContainerBuilder.php(903): Symfony\Component\DependencyInjection\ContainerBuilder->get('twig_loader', 1)
+#6 /var/www/ld2/vendor/symfony" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/09/01 21:36:54 [error] 2724#2724: *13 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Twig_Error_Loader: The "../res/templates" directory does not exist. in /var/www/ld2/vendor/twig/twig/lib/Twig/Loader/Filesystem.php:71
+Stack trace:
+#0 /var/www/ld2/vendor/twig/twig/lib/Twig/Loader/Filesystem.php(56): Twig_Loader_Filesystem->addPath('../res/template...')
+#1 /var/www/ld2/vendor/twig/twig/lib/Twig/Loader/Filesystem.php(30): Twig_Loader_Filesystem->setPaths(Array)
+#2 [internal function]: Twig_Loader_Filesystem->__construct('../res/template...')
+#3 /var/www/ld2/vendor/symfony/dependency-injection/ContainerBuilder.php(846): ReflectionClass->newInstanceArgs(Array)
+#4 /var/www/ld2/vendor/symfony/dependency-injection/ContainerBuilder.php(417): Symfony\Component\DependencyInjection\ContainerBuilder->createService(Object(Symfony\Component\DependencyInjection\Definition), 'twig_loader')
+#5 /var/www/ld2/vendor/symfony/dependency-injection/ContainerBuilder.php(903): Symfony\Component\DependencyInjection\ContainerBuilder->get('twig_loader', 1)
+#6 /var/www/ld2/vend" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/09/01 21:51:06 [error] 2724#2724: *17 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Twig_Error_Loader: The "!php/const:ROOT/res/templates" directory does not exist. in /var/www/ld2/vendor/twig/twig/lib/Twig/Loader/Filesystem.php:71
+Stack trace:
+#0 /var/www/ld2/vendor/twig/twig/lib/Twig/Loader/Filesystem.php(56): Twig_Loader_Filesystem->addPath('!php/const:ROOT...')
+#1 /var/www/ld2/vendor/twig/twig/lib/Twig/Loader/Filesystem.php(30): Twig_Loader_Filesystem->setPaths(Array)
+#2 [internal function]: Twig_Loader_Filesystem->__construct('!php/const:ROOT...')
+#3 /var/www/ld2/vendor/symfony/dependency-injection/ContainerBuilder.php(846): ReflectionClass->newInstanceArgs(Array)
+#4 /var/www/ld2/vendor/symfony/dependency-injection/ContainerBuilder.php(417): Symfony\Component\DependencyInjection\ContainerBuilder->createService(Object(Symfony\Component\DependencyInjection\Definition), 'twig_loader')
+#5 /var/www/ld2/vendor/symfony/dependency-injection/ContainerBuilder.php(903): Symfony\Component\DependencyInjection\ContainerBuilder->get('twig_loader', 1)
+#6 /var" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/09/01 21:58:31 [error] 2724#2724: *19 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class 'Symfony\Component\ExpressionLanguage\Expression' not found in /var/www/ld2/vendor/symfony/dependency-injection/Loader/YamlFileLoader.php:429
+Stack trace:
+#0 /var/www/ld2/vendor/symfony/dependency-injection/Loader/YamlFileLoader.php(87): Symfony\Component\DependencyInjection\Loader\YamlFileLoader->resolveServices('@=constant("LD2...')
+#1 /var/www/ld2/config/container.php(13): Symfony\Component\DependencyInjection\Loader\YamlFileLoader->load('container.yml')
+#2 /var/www/ld2/app.php(12): require('/var/www/ld2/co...')
+#3 /var/www/ld2/setup.php(13): require('/var/www/ld2/ap...')
+#4 /var/www/ld2/index.php(4): require('/var/www/ld2/se...')
+#5 {main}
+  thrown in /var/www/ld2/vendor/symfony/dependency-injection/Loader/YamlFileLoader.php on line 429" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/09/01 21:59:25 [error] 2724#2724: *21 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Symfony\Component\DependencyInjection\Exception\RuntimeException: A string value must be composed of strings and/or numbers, but found parameter "root_dir" of type object inside string value "%root_dir%/res/templates". in /var/www/ld2/vendor/symfony/dependency-injection/ParameterBag/ParameterBag.php:217
+Stack trace:
+#0 [internal function]: Symfony\Component\DependencyInjection\ParameterBag\ParameterBag->Symfony\Component\DependencyInjection\ParameterBag\{closure}(Array)
+#1 /var/www/ld2/vendor/symfony/dependency-injection/ParameterBag/ParameterBag.php(224): preg_replace_callback('/%%|%([^%\\s]+)%...', Object(Closure), '%root_dir%/res/...')
+#2 /var/www/ld2/vendor/symfony/dependency-injection/ParameterBag/ParameterBag.php(171): Symfony\Component\DependencyInjection\ParameterBag\ParameterBag->resolveString('%root_dir%/res/...', Array)
+#3 /var/www/ld2/vendor/symfony/dependency-injection/ParameterBag/ParameterBag.php(161): Symfony\Component\DependencyInjection\ParameterBa" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/09/01 21:59:57 [error] 2724#2724: *23 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Symfony\Component\DependencyInjection\Exception\RuntimeException: A string value must be composed of strings and/or numbers, but found parameter "root_dir" of type object inside string value "%root_dir%/res/templates". in /var/www/ld2/vendor/symfony/dependency-injection/ParameterBag/ParameterBag.php:217
+Stack trace:
+#0 [internal function]: Symfony\Component\DependencyInjection\ParameterBag\ParameterBag->Symfony\Component\DependencyInjection\ParameterBag\{closure}(Array)
+#1 /var/www/ld2/vendor/symfony/dependency-injection/ParameterBag/ParameterBag.php(224): preg_replace_callback('/%%|%([^%\\s]+)%...', Object(Closure), '%root_dir%/res/...')
+#2 /var/www/ld2/vendor/symfony/dependency-injection/ParameterBag/ParameterBag.php(171): Symfony\Component\DependencyInjection\ParameterBag\ParameterBag->resolveString('%root_dir%/res/...', Array)
+#3 /var/www/ld2/vendor/symfony/dependency-injection/ParameterBag/ParameterBag.php(161): Symfony\Component\DependencyInjection\ParameterBa" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/09/01 22:00:52 [error] 2724#2724: *25 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Twig_Error_Loader: The "constant("LD2\\App::ROOT")/res/templates" directory does not exist. in /var/www/ld2/vendor/twig/twig/lib/Twig/Loader/Filesystem.php:71
+Stack trace:
+#0 /var/www/ld2/vendor/twig/twig/lib/Twig/Loader/Filesystem.php(56): Twig_Loader_Filesystem->addPath('constant("LD2\\\\...')
+#1 /var/www/ld2/vendor/twig/twig/lib/Twig/Loader/Filesystem.php(30): Twig_Loader_Filesystem->setPaths(Array)
+#2 [internal function]: Twig_Loader_Filesystem->__construct('constant("LD2\\\\...')
+#3 /var/www/ld2/vendor/symfony/dependency-injection/ContainerBuilder.php(846): ReflectionClass->newInstanceArgs(Array)
+#4 /var/www/ld2/vendor/symfony/dependency-injection/ContainerBuilder.php(417): Symfony\Component\DependencyInjection\ContainerBuilder->createService(Object(Symfony\Component\DependencyInjection\Definition), 'twig_loader')
+#5 /var/www/ld2/vendor/symfony/dependency-injection/ContainerBuilder.php(903): Symfony\Component\DependencyInjection\ContainerBuilder->get('twig_load" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/09/01 22:01:12 [error] 2726#2726: *27 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Symfony\Component\DependencyInjection\Exception\RuntimeException: A string value must be composed of strings and/or numbers, but found parameter "root_dir" of type object inside string value "%root_dir%/res/templates". in /var/www/ld2/vendor/symfony/dependency-injection/ParameterBag/ParameterBag.php:217
+Stack trace:
+#0 [internal function]: Symfony\Component\DependencyInjection\ParameterBag\ParameterBag->Symfony\Component\DependencyInjection\ParameterBag\{closure}(Array)
+#1 /var/www/ld2/vendor/symfony/dependency-injection/ParameterBag/ParameterBag.php(224): preg_replace_callback('/%%|%([^%\\s]+)%...', Object(Closure), '%root_dir%/res/...')
+#2 /var/www/ld2/vendor/symfony/dependency-injection/ParameterBag/ParameterBag.php(171): Symfony\Component\DependencyInjection\ParameterBag\ParameterBag->resolveString('%root_dir%/res/...', Array)
+#3 /var/www/ld2/vendor/symfony/dependency-injection/ParameterBag/ParameterBag.php(161): Symfony\Component\DependencyInjection\ParameterBa" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/09/01 22:02:22 [error] 2726#2726: *29 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Twig_Error_Loader: Unable to find template "login.twig" (looked into: /var/www/ld2/res/templates). in /var/www/ld2/vendor/twig/twig/lib/Twig/Loader/Filesystem.php:129
+Stack trace:
+#0 /var/www/ld2/vendor/twig/twig/lib/Twig/Loader/Filesystem.php(98): Twig_Loader_Filesystem->findTemplate('login.twig')
+#1 /var/www/ld2/vendor/twig/twig/lib/Twig/Environment.php(260): Twig_Loader_Filesystem->getCacheKey('login.twig')
+#2 /var/www/ld2/vendor/twig/twig/lib/Twig/Environment.php(306): Twig_Environment->getTemplateClass('login.twig')
+#3 /var/www/ld2/vendor/twig/twig/lib/Twig/Environment.php(283): Twig_Environment->loadTemplate('login.twig')
+#4 /var/www/ld2/lib/BaseController.php(101): Twig_Environment->render('login.twig', Array)
+#5 /var/www/ld2/site/SiteController.php(39): LD2\BaseController->render('login.twig')
+#6 [internal function]: LD2Controller\SiteController->loginAction()
+#7 /var/www/ld2/lib/BaseController.php(89): call_user_func_array(Array, Array)
+#8 /var/www/ld2/site" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/09/01 22:02:36 [error] 2726#2726: *29 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined offset: 0 in /var/www/ld2/lib/View/PathFunction.php on line 25
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0
+PHP message: PHP   2. require() /var/www/ld2/index.php:4
+PHP message: PHP   3. require() /var/www/ld2/setup.php:13
+PHP message: PHP   4. require() /var/www/ld2/app.php:49
+PHP message: PHP   5. LD2Controller\StartController->indexAction() /var/www/ld2/config/router.php:38
+PHP message: PHP   6. LD2\BaseController->forward() /var/www/ld2/site/StartController.php:16
+PHP message: PHP   7. call_user_func_array:{/var/www/ld2/lib/BaseController.php:89}() /var/www/ld2/lib/BaseController.php:89
+PHP message: PHP   8. LD2Controller\SiteController->loginAction() /var/www/ld2/lib/BaseController.php:89
+PHP message: PHP   9. LD2\BaseController->render() /var/www/ld2/site/SiteController.php:39
+PHP message: PHP  10. Twig_Environment->render() /var/www/ld2/lib/BaseController.php:101
+PHP message: PHP  11. Twig_Environment->loadTemplate() /var/www/ld2/vendor/twig/twig/lib/Twig/Environment.php:283
+PHP message: PHP  12. Twig_Environment->compileSource() /var/www/ld2/vendor/twig/twig/lib/Twig/Environment.php:314
+PHP message: PHP  13. Twig_Environment->compile() /var/www/ld2/vendor/twig/twig/lib/Twig/Environment.php:523
+PHP message: PHP  14. Twig_Compiler->compile() /var/www/ld2/vendor/twig/twig/lib/Twig/Environment.php:509
+PHP message: PHP  15. Twig_Node_Module->compile() /var/www/ld2/vendor/twig/twig/lib/Twig/Compiler.php:76
+PHP message: PHP  16. Twig_Node_Module->compileTemplate() /var/www/ld2/vendor/twig/twig/lib/Twig/Node/Module.php:33
+PHP message: PHP  17. Twig_Compiler->subcompile() /var/www/ld2/vendor/twig/twig/lib/Twig/Node/Module.php:52
+PHP message: PHP  18. Twig_Node->compile() /var/www/ld2/vendor/twig/twig/lib/Twig/Compiler.php:87
+PHP message: PHP  19. Twig_Node->compile() /var/www/ld2/vendor/twig/twig/lib/Twig/Node.php:106
+PHP message: PHP  20. Twig_Node_Block->compile() /var
+2016/09/01 22:02:36 [error] 2726#2726: *29 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Symfony\Component\Routing\Exception\RouteNotFoundException: Unable to generate a URL for the named route "" as such route does not exist. in /var/www/ld2/vendor/symfony/routing/Generator/UrlGenerator.php:130
+Stack trace:
+#0 /var/www/ld2/vendor/symfony/routing/Router.php(244): Symfony\Component\Routing\Generator\UrlGenerator->generate(NULL, Array, 1)
+#1 /var/www/ld2/lib/View/PathFunction.php(25): Symfony\Component\Routing\Router->generate(NULL)
+#2 /var/www/ld2/vendor/twig/twig/lib/Twig/Node/Expression/Function.php(31): LD2\View\PathFunction->compile()
+#3 /var/www/ld2/vendor/twig/twig/lib/Twig/Compiler.php(87): Twig_Node_Expression_Function->compile(Object(Twig_Compiler))
+#4 /var/www/ld2/vendor/twig/twig/lib/Twig/Node/Expression/Filter.php(50): Twig_Compiler->subcompile(Object(Twig_Node_Expression_Function))
+#5 /var/www/ld2/vendor/twig/twig/lib/Twig/Node/Expression/Filter.php(32): Twig_Node_Expression_Filter->compileFilter(Object(Twig_Compiler), Object(Twig_Filter_Fun" while reading upstream, client: 127.0.0.1, server: mysite.local, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/09/01 22:03:17 [error] 2726#2726: *32 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined offset: 0 in /var/www/ld2/lib/View/PathFunction.php on line 25
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0
+PHP message: PHP   2. require() /var/www/ld2/index.php:4
+PHP message: PHP   3. require() /var/www/ld2/setup.php:13
+PHP message: PHP   4. require() /var/www/ld2/app.php:49
+PHP message: PHP   5. LD2Controller\StartController->indexAction() /var/www/ld2/config/router.php:38
+PHP message: PHP   6. LD2\BaseController->forward($name = *uninitialized*) /var/www/ld2/site/StartController.php:16
+PHP message: PHP   7. call_user_func_array:{/var/www/ld2/lib/BaseController.php:89}(*uninitialized*, *uninitialized*) /var/www/ld2/lib/BaseController.php:89
+PHP message: PHP   8. LD2Controller\SiteController->loginAction() /var/www/ld2/lib/BaseController.php:89
+PHP message: PHP   9. LD2\BaseController->render($template = *uninitialized*, $params = *uninitialized*) /var/www/ld2/site/SiteController.php:39
+PHP message: PHP  10. Twig_Environment->render($name = *uninitialized*, $context = *uninitialized*) /var/www/ld2/lib/BaseController.php:101
+PHP message: PHP  11. Twig_Environment->loadTemplate($name = *uninitialized*) /var/www/ld2/vendor/twig/twig/lib/Twig/Environment.php:283
+PHP message: PHP  12. Twig_Environment->compileSource($source = *uninitialized*, $name = *uninitialized*) /var/www/ld2/vendor/twig/twig/lib/Twig/Environment.php:314
+PHP message: PHP  13. Twig_Environment->compile($node = *uninitialized*) /var/www/ld2/vendor/twig/twig/lib/Twig/Environment.php:523
+PHP message: PHP  14. Twig_Compiler->compile($node = *uninitialized*, $indentation = *uninitialized*) /var/www/ld2/vendor/twig/twig/lib/Twig/Environment.php:509
+PHP message: PHP  15. Twig_Node_Module->compile($compiler = *uninitialized*) /var/www/ld2/vendor/twig/twig/lib/Twig/Compiler.php:76
+PHP message: PHP  16. Twig_Node_Module->compileTemplate($compiler = *uninitialized*) /var/www/ld2/vendor/twig/twig/lib/Twig/Node/Mod
+2016/09/01 22:03:17 [error] 2726#2726: *32 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Symfony\Component\Routing\Exception\RouteNotFoundException: Unable to generate a URL for the named route "" as such route does not exist. in /var/www/ld2/vendor/symfony/routing/Generator/UrlGenerator.php:130
+Stack trace:
+#0 /var/www/ld2/vendor/symfony/routing/Router.php(244): Symfony\Component\Routing\Generator\UrlGenerator->generate(NULL, Array, 1)
+#1 /var/www/ld2/lib/View/PathFunction.php(25): Symfony\Component\Routing\Router->generate(NULL)
+#2 /var/www/ld2/vendor/twig/twig/lib/Twig/Node/Expression/Function.php(31): LD2\View\PathFunction->compile()
+#3 /var/www/ld2/vendor/twig/twig/lib/Twig/Compiler.php(87): Twig_Node_Expression_Function->compile(Object(Twig_Compiler))
+#4 /var/www/ld2/vendor/twig/twig/lib/Twig/Node/Expression/Filter.php(50): Twig_Compiler->subcompile(Object(Twig_Node_Expression_Function))
+#5 /var/www/ld2/vendor/twig/twig/lib/Twig/Node/Expression/Filter.php(32): Twig_Node_Expression_Filter->compileFilter(Object(Twig_Compiler), Object(Twig_Filter_Fun" while reading upstream, client: 127.0.0.1, server: mysite.local, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/09/01 22:06:43 [error] 2726#2726: *34 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined offset: 0 in /var/www/ld2/lib/View/PathFunction.php on line 25
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0
+PHP message: PHP   2. require() /var/www/ld2/index.php:4
+PHP message: PHP   3. require() /var/www/ld2/setup.php:13
+PHP message: PHP   4. require() /var/www/ld2/app.php:49
+PHP message: PHP   5. LD2Controller\StartController->indexAction() /var/www/ld2/config/router.php:38
+PHP message: PHP   6. LD2\BaseController->forward($name = *uninitialized*) /var/www/ld2/site/StartController.php:16
+PHP message: PHP   7. call_user_func_array:{/var/www/ld2/lib/BaseController.php:89}(*uninitialized*, *uninitialized*) /var/www/ld2/lib/BaseController.php:89
+PHP message: PHP   8. LD2Controller\SiteController->loginAction() /var/www/ld2/lib/BaseController.php:89
+PHP message: PHP   9. LD2\BaseController->render($template = *uninitialized*, $params = *uninitialized*) /var/www/ld2/site/SiteController.php:39
+PHP message: PHP  10. Twig_Environment->render($name = *uninitialized*, $context = *uninitialized*) /var/www/ld2/lib/BaseController.php:101
+PHP message: PHP  11. Twig_Environment->loadTemplate($name = *uninitialized*) /var/www/ld2/vendor/twig/twig/lib/Twig/Environment.php:283
+PHP message: PHP  12. Twig_Environment->compileSource($source = *uninitialized*, $name = *uninitialized*) /var/www/ld2/vendor/twig/twig/lib/Twig/Environment.php:314
+PHP message: PHP  13. Twig_Environment->compile($node = *uninitialized*) /var/www/ld2/vendor/twig/twig/lib/Twig/Environment.php:523
+PHP message: PHP  14. Twig_Compiler->compile($node = *uninitialized*, $indentation = *uninitialized*) /var/www/ld2/vendor/twig/twig/lib/Twig/Environment.php:509
+PHP message: PHP  15. Twig_Node_Module->compile($compiler = *uninitialized*) /var/www/ld2/vendor/twig/twig/lib/Twig/Compiler.php:76
+PHP message: PHP  16. Twig_Node_Module->compileTemplate($compiler = *uninitialized*) /var/www/ld2/vendor/twig/twig/lib/Twig/Node/Mod
+2016/09/01 22:06:43 [error] 2726#2726: *34 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Symfony\Component\Routing\Exception\RouteNotFoundException: Unable to generate a URL for the named route "" as such route does not exist. in /var/www/ld2/vendor/symfony/routing/Generator/UrlGenerator.php:130
+Stack trace:
+#0 /var/www/ld2/vendor/symfony/routing/Router.php(244): Symfony\Component\Routing\Generator\UrlGenerator->generate(NULL, Array, 1)
+#1 /var/www/ld2/lib/View/PathFunction.php(25): Symfony\Component\Routing\Router->generate(NULL)
+#2 /var/www/ld2/vendor/twig/twig/lib/Twig/Node/Expression/Function.php(31): LD2\View\PathFunction->compile()
+#3 /var/www/ld2/vendor/twig/twig/lib/Twig/Compiler.php(87): Twig_Node_Expression_Function->compile(Object(Twig_Compiler))
+#4 /var/www/ld2/vendor/twig/twig/lib/Twig/Node/Expression/Filter.php(50): Twig_Compiler->subcompile(Object(Twig_Node_Expression_Function))
+#5 /var/www/ld2/vendor/twig/twig/lib/Twig/Node/Expression/Filter.php(32): Twig_Node_Expression_Filter->compileFilter(Object(Twig_Compiler), Object(Twig_Filter_Fun" while reading upstream, client: 127.0.0.1, server: mysite.local, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/09/01 22:07:20 [error] 2726#2726: *36 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined offset: 0 in /var/www/ld2/lib/View/PathFunction.php on line 25
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0
+PHP message: PHP   2. require() /var/www/ld2/index.php:4
+PHP message: PHP   3. require() /var/www/ld2/setup.php:13
+PHP message: PHP   4. require() /var/www/ld2/app.php:49
+PHP message: PHP   5. LD2Controller\StartController->indexAction() /var/www/ld2/config/router.php:38
+PHP message: PHP   6. LD2\BaseController->forward($name = *uninitialized*) /var/www/ld2/site/StartController.php:16
+PHP message: PHP   7. call_user_func_array:{/var/www/ld2/lib/BaseController.php:89}(*uninitialized*, *uninitialized*) /var/www/ld2/lib/BaseController.php:89
+PHP message: PHP   8. LD2Controller\SiteController->loginAction() /var/www/ld2/lib/BaseController.php:89
+PHP message: PHP   9. LD2\BaseController->render($template = *uninitialized*, $params = *uninitialized*) /var/www/ld2/site/SiteController.php:39
+PHP message: PHP  10. Twig_Environment->render($name = *uninitialized*, $context = *uninitialized*) /var/www/ld2/lib/BaseController.php:101
+PHP message: PHP  11. Twig_Environment->loadTemplate($name = *uninitialized*) /var/www/ld2/vendor/twig/twig/lib/Twig/Environment.php:283
+PHP message: PHP  12. Twig_Environment->compileSource($source = *uninitialized*, $name = *uninitialized*) /var/www/ld2/vendor/twig/twig/lib/Twig/Environment.php:314
+PHP message: PHP  13. Twig_Environment->compile($node = *uninitialized*) /var/www/ld2/vendor/twig/twig/lib/Twig/Environment.php:523
+PHP message: PHP  14. Twig_Compiler->compile($node = *uninitialized*, $indentation = *uninitialized*) /var/www/ld2/vendor/twig/twig/lib/Twig/Environment.php:509
+PHP message: PHP  15. Twig_Node_Module->compile($compiler = *uninitialized*) /var/www/ld2/vendor/twig/twig/lib/Twig/Compiler.php:76
+PHP message: PHP  16. Twig_Node_Module->compileTemplate($compiler = *uninitialized*) /var/www/ld2/vendor/twig/twig/lib/Twig/Node/Mod
+2016/09/01 22:07:20 [error] 2726#2726: *36 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Symfony\Component\Routing\Exception\RouteNotFoundException: Unable to generate a URL for the named route "" as such route does not exist. in /var/www/ld2/vendor/symfony/routing/Generator/UrlGenerator.php:130
+Stack trace:
+#0 /var/www/ld2/vendor/symfony/routing/Router.php(244): Symfony\Component\Routing\Generator\UrlGenerator->generate(NULL, Array, 1)
+#1 /var/www/ld2/lib/View/PathFunction.php(25): Symfony\Component\Routing\Router->generate(NULL)
+#2 /var/www/ld2/vendor/twig/twig/lib/Twig/Node/Expression/Function.php(31): LD2\View\PathFunction->compile()
+#3 /var/www/ld2/vendor/twig/twig/lib/Twig/Compiler.php(87): Twig_Node_Expression_Function->compile(Object(Twig_Compiler))
+#4 /var/www/ld2/vendor/twig/twig/lib/Twig/Node/Expression/Filter.php(50): Twig_Compiler->subcompile(Object(Twig_Node_Expression_Function))
+#5 /var/www/ld2/vendor/twig/twig/lib/Twig/Node/Expression/Filter.php(32): Twig_Node_Expression_Filter->compileFilter(Object(Twig_Compiler), Object(Twig_Filter_Fun" while reading upstream, client: 127.0.0.1, server: mysite.local, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/09/01 22:10:32 [error] 2726#2726: *38 FastCGI sent in stderr: "PHP message: PHP Warning:  Missing argument 1 for Twig_SimpleFunction::__construct(), called in /var/www/ld2/lib/BaseController.php on line 108 and defined in /var/www/ld2/vendor/twig/twig/lib/Twig/SimpleFunction.php on line 24
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0
+PHP message: PHP   2. require() /var/www/ld2/index.php:4
+PHP message: PHP   3. require() /var/www/ld2/setup.php:13
+PHP message: PHP   4. require() /var/www/ld2/app.php:49
+PHP message: PHP   5. LD2Controller\StartController->indexAction() /var/www/ld2/config/router.php:38
+PHP message: PHP   6. LD2\BaseController->forward($name = *uninitialized*) /var/www/ld2/site/StartController.php:16
+PHP message: PHP   7. call_user_func_array:{/var/www/ld2/lib/BaseController.php:89}(*uninitialized*, *uninitialized*) /var/www/ld2/lib/BaseController.php:89
+PHP message: PHP   8. LD2Controller\SiteController->loginAction() /var/www/ld2/lib/BaseController.php:89
+PHP message: PHP   9. LD2\BaseController->render($template = *uninitialized*, $params = *uninitialized*) /var/www/ld2/site/SiteController.php:39
+PHP message: PHP  10. LD2\BaseController->addTwigFunctions($twig = *uninitialized*) /var/www/ld2/lib/BaseController.php:99
+PHP message: PHP  11. Twig_SimpleFunction->__construct($name = *uninitialized*, $callable = *uninitialized*, $options = *uninitialized*) /var/www/ld2/lib/BaseController.php:108" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/09/01 22:10:32 [error] 2726#2726: *38 FastCGI sent in stderr: "PHP message: PHP Warning:  Missing argument 2 for Twig_SimpleFunction::__construct(), called in /var/www/ld2/lib/BaseController.php on line 108 and defined in /var/www/ld2/vendor/twig/twig/lib/Twig/SimpleFunction.php on line 24
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0
+PHP message: PHP   2. require() /var/www/ld2/index.php:4
+PHP message: PHP   3. require() /var/www/ld2/setup.php:13
+PHP message: PHP   4. require() /var/www/ld2/app.php:49
+PHP message: PHP   5. LD2Controller\StartController->indexAction() /var/www/ld2/config/router.php:38
+PHP message: PHP   6. LD2\BaseController->forward($name = *uninitialized*) /var/www/ld2/site/StartController.php:16
+PHP message: PHP   7. call_user_func_array:{/var/www/ld2/lib/BaseController.php:89}(*uninitialized*, *uninitialized*) /var/www/ld2/lib/BaseController.php:89
+PHP message: PHP   8. LD2Controller\SiteController->loginAction() /var/www/ld2/lib/BaseController.php:89
+PHP message: PHP   9. LD2\BaseController->render($template = *uninitialized*, $params = *uninitialized*) /var/www/ld2/site/SiteController.php:39
+PHP message: PHP  10. LD2\BaseController->addTwigFunctions($twig = *uninitialized*) /var/www/ld2/lib/BaseController.php:99
+PHP message: PHP  11. Twig_Simpl" while reading upstream, client: 127.0.0.1, server: mysite.local, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/09/01 22:10:32 [error] 2726#2726: *38 FastCGI sent in stderr: "eFunction->__construct($name = *uninitialized*, $callable = *uninitialized*, $options = *uninitialized*) /var/www/ld2/lib/BaseController.php:108" while reading upstream, client: 127.0.0.1, server: mysite.local, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/09/01 22:10:32 [error] 2726#2726: *38 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: name in /var/www/ld2/vendor/twig/twig/lib/Twig/SimpleFunction.php on line 26
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0
+PHP message: PHP   2. require() /var/www/ld2/index.php:4
+PHP message: PHP   3. require() /var/www/ld2/setup.php:13
+PHP message: PHP   4. require() /var/www/ld2/app.php:49
+PHP message: PHP   5. LD2Controller\StartController->indexAction() /var/www/ld2/config/router.php:38
+PHP message: PHP   6. LD2\BaseController->forward($name = *uninitialized*) /var/www/ld2/site/StartController.php:16
+PHP message: PHP   7. call_user_func_array:{/var/www/ld2/lib/BaseController.php:89}(*uninitialized*, *uninitialized*) /var/www/ld2/lib/BaseController.php:89
+PHP message: PHP   8. LD2Controller\SiteController->loginAction() /var/www/ld2/lib/BaseController.php:89
+PHP message: PHP   9. LD2\BaseController->render($template = *uninitialized*, $params = *uninitialized*) /var/www/ld2/site/SiteController.php:39
+PHP message: PHP  10. LD2\BaseController->addTwigFunctions($twig = *uninitialized*) /var/www/ld2/lib/BaseController.php:99
+PHP message: PHP  11. Twig_SimpleFunction->__construct($name = *uninitialized*, $callable = *uninitialized*, $options = *uninitialized*) /var/www/ld2/lib/BaseController.php:108" while reading upstream, client: 127.0.0.1, server: mysite.local, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/09/01 22:10:32 [error] 2726#2726: *38 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined variable: callable in /var/www/ld2/vendor/twig/twig/lib/Twig/SimpleFunction.php on line 27
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0
+PHP message: PHP   2. require() /var/www/ld2/index.php:4
+PHP message: PHP   3. require() /var/www/ld2/setup.php:13
+PHP message: PHP   4. require() /var/www/ld2/app.php:49
+PHP message: PHP   5. LD2Controller\StartController->indexAction() /var/www/ld2/config/router.php:38
+PHP message: PHP   6. LD2\BaseController->forward($name = *uninitialized*) /var/www/ld2/site/StartController.php:16
+PHP message: PHP   7. call_user_func_array:{/var/www/ld2/lib/BaseController.php:89}(*uninitialized*, *uninitialized*) /var/www/ld2/lib/BaseController.php:89
+PHP message: PHP   8. LD2Controller\SiteController->loginAction() /var/www/ld2/lib/BaseController.php:89
+PHP message: PHP   9. LD2\BaseController->render($template = *uninitialized*, $params = *uninitialized*) /var/www/ld2/site/SiteController.php:39
+PHP message: PHP  10. LD2\BaseController->addTwigFunctions($twig = *uninitialized*) /var/www/ld2/lib/BaseController.php:99
+PHP message: PHP  11. Twig_SimpleFunction->__construct($name = *uninitialized*, $callable = *uninitialized*, $options = *uninitialized*) /var/www/ld2/lib/BaseController.php:108" while reading upstream, client: 127.0.0.1, server: mysite.local, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/09/01 22:10:32 [error] 2726#2726: *38 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Twig_Error_Syntax: Unknown "path" function in "twig/login.twig" at line 9. in /var/www/ld2/vendor/twig/twig/lib/Twig/ExpressionParser.php:574
+Stack trace:
+#0 /var/www/ld2/vendor/twig/twig/lib/Twig/ExpressionParser.php(351): Twig_ExpressionParser->getFunctionNodeClass('path', 9)
+#1 /var/www/ld2/vendor/twig/twig/lib/Twig/ExpressionParser.php(144): Twig_ExpressionParser->getFunctionNode('path', 9)
+#2 /var/www/ld2/vendor/twig/twig/lib/Twig/ExpressionParser.php(84): Twig_ExpressionParser->parsePrimaryExpression()
+#3 /var/www/ld2/vendor/twig/twig/lib/Twig/ExpressionParser.php(41): Twig_ExpressionParser->getPrimary()
+#4 /var/www/ld2/vendor/twig/twig/lib/Twig/Parser.php(144): Twig_ExpressionParser->parseExpression()
+#5 /var/www/ld2/vendor/twig/twig/lib/Twig/TokenParser/Block.php(38): Twig_Parser->subparse(Array, true)
+#6 /var/www/ld2/vendor/twig/twig/lib/Twig/Parser.php(187): Twig_TokenParser_Block->parse(Object(Twig_Token))
+#7 /var/www/ld2/vendor/twig/twig/lib/Twig/Parser" while reading upstream, client: 127.0.0.1, server: mysite.local, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/09/01 22:16:16 [error] 2726#2726: *40 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Twig_Error_Syntax: Unknown "path" function in "twig/login.twig" at line 9. in /var/www/ld2/vendor/twig/twig/lib/Twig/ExpressionParser.php:574
+Stack trace:
+#0 /var/www/ld2/vendor/twig/twig/lib/Twig/ExpressionParser.php(351): Twig_ExpressionParser->getFunctionNodeClass('path', 9)
+#1 /var/www/ld2/vendor/twig/twig/lib/Twig/ExpressionParser.php(144): Twig_ExpressionParser->getFunctionNode('path', 9)
+#2 /var/www/ld2/vendor/twig/twig/lib/Twig/ExpressionParser.php(84): Twig_ExpressionParser->parsePrimaryExpression()
+#3 /var/www/ld2/vendor/twig/twig/lib/Twig/ExpressionParser.php(41): Twig_ExpressionParser->getPrimary()
+#4 /var/www/ld2/vendor/twig/twig/lib/Twig/Parser.php(144): Twig_ExpressionParser->parseExpression()
+#5 /var/www/ld2/vendor/twig/twig/lib/Twig/TokenParser/Block.php(38): Twig_Parser->subparse(Array, true)
+#6 /var/www/ld2/vendor/twig/twig/lib/Twig/Parser.php(187): Twig_TokenParser_Block->parse(Object(Twig_Token))
+#7 /var/www/ld2/vendor/twig/twig/lib/Twig/Parser" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/09/01 22:17:03 [error] 2726#2726: *42 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Twig_Error_Loader: Unable to find template "layout.twig" (looked into: /var/www/ld2/res/templates) in "twig/login.twig" at line 6. in /var/www/ld2/vendor/twig/twig/lib/Twig/Loader/Filesystem.php:215
+Stack trace:
+#0 /var/www/ld2/vendor/twig/twig/lib/Twig/Loader/Filesystem.php(139): Twig_Loader_Filesystem->findTemplate('layout.twig')
+#1 /var/www/ld2/vendor/twig/twig/lib/Twig/Environment.php(312): Twig_Loader_Filesystem->getCacheKey('layout.twig')
+#2 /var/www/ld2/vendor/twig/twig/lib/Twig/Environment.php(378): Twig_Environment->getTemplateClass('layout.twig', NULL)
+#3 /var/www/ld2/vendor/twig/twig/lib/Twig/Template.php(286): Twig_Environment->loadTemplate('layout.twig', NULL)
+#4 /var/www/ld2/vendor/twig/twig/lib/Twig/Environment.php(403) : eval()'d code(11): Twig_Template->loadTemplate('layout.twig', 'twig/login.twig', 6)
+#5 /var/www/ld2/vendor/twig/twig/lib/Twig/Environment.php(411): __TwigTemplate_cda4d570efcfba83c8da9a5cf7d283e449ced9211e1b2f3547d2467bbb4b4e2a->__co" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/09/01 22:17:24 [error] 2726#2726: *44 FastCGI sent in stderr: "PHP message: PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, cannot access protected method LD2Controller\SiteController::generate() in /var/www/ld2/vendor/twig/twig/lib/Twig/Environment.php(403) : eval()'d code on line 32
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0
+PHP message: PHP   2. require() /var/www/ld2/index.php:4
+PHP message: PHP   3. require() /var/www/ld2/setup.php:13
+PHP message: PHP   4. require() /var/www/ld2/app.php:49
+PHP message: PHP   5. LD2Controller\StartController->indexAction() /var/www/ld2/config/router.php:38
+PHP message: PHP   6. LD2\BaseController->forward($name = *uninitialized*) /var/www/ld2/site/StartController.php:16
+PHP message: PHP   7. call_user_func_array:{/var/www/ld2/lib/BaseController.php:89}(*uninitialized*, *uninitialized*) /var/www/ld2/lib/BaseController.php:89
+PHP message: PHP   8. LD2Controller\SiteController->loginAction() /var/www/ld2/lib/BaseController.php:89
+PHP message: PHP   9. LD2\BaseController->render($template = *uninitialized*, $params = *uninitialized*) /var/www/ld2/site/SiteController.php:39
+PHP message: PHP  10. Twig_Environment->render($name = *uninitialized*, $context = *uninitialized*) /var/www/ld2/lib/BaseController.php:102
+PHP message: PHP  11. Twig_Template->render($context = *uninitialized*) /var/www/ld2/vendor/twig/twig/lib/Twig/Environment.php:347
+PHP message: PHP  12. Twig_Template->display($context = *uninitialized*, $blocks = *uninitialized*) /var/www/ld2/vendor/twig/twig/lib/Twig/Template.php:366
+PHP message: PHP  13. Twig_Template->displayWithErrorHandling($context = *uninitialized*, $blocks = *uninitialized*) /var/www/ld2/vendor/twig/twig/lib/Twig/Template.php:355
+PHP message: PHP  14. __TwigTemplate_cda4d570efcfba83c8da9a5cf7d283e449ced9211e1b2f3547d2467bbb4b4e2a->doDisplay($context = *uninitialized*, $blocks = *uninitialized*) /var/www/ld2/vendor/twig/twig/lib/Twig/Template.php:387
+PHP message: PHP  
+2016/09/01 22:17:30 [error] 2726#2726: *44 FastCGI sent in stderr: "PHP message: PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, cannot access protected method LD2Controller\SiteController::generate() in /var/www/ld2/vendor/twig/twig/lib/Twig/Environment.php(403) : eval()'d code on line 32
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0
+PHP message: PHP   2. require() /var/www/ld2/index.php:4
+PHP message: PHP   3. require() /var/www/ld2/setup.php:13
+PHP message: PHP   4. require() /var/www/ld2/app.php:49
+PHP message: PHP   5. LD2Controller\StartController->indexAction() /var/www/ld2/config/router.php:38
+PHP message: PHP   6. LD2\BaseController->forward() /var/www/ld2/site/StartController.php:16
+PHP message: PHP   7. call_user_func_array:{/var/www/ld2/lib/BaseController.php:89}() /var/www/ld2/lib/BaseController.php:89
+PHP message: PHP   8. LD2Controller\SiteController->loginAction() /var/www/ld2/lib/BaseController.php:89
+PHP message: PHP   9. LD2\BaseController->render() /var/www/ld2/site/SiteController.php:39
+PHP message: PHP  10. Twig_Environment->render() /var/www/ld2/lib/BaseController.php:102
+PHP message: PHP  11. Twig_Template->render() /var/www/ld2/vendor/twig/twig/lib/Twig/Environment.php:347
+PHP message: PHP  12. Twig_Template->display() /var/www/ld2/vendor/twig/twig/lib/Twig/Template.php:366
+PHP message: PHP  13. Twig_Template->displayWithErrorHandling() /var/www/ld2/vendor/twig/twig/lib/Twig/Template.php:355
+PHP message: PHP  14. __TwigTemplate_cda4d570efcfba83c8da9a5cf7d283e449ced9211e1b2f3547d2467bbb4b4e2a->doDisplay() /var/www/ld2/vendor/twig/twig/lib/Twig/Template.php:387
+PHP message: PHP  15. Twig_Template->display() /var/www/ld2/vendor/twig/twig/lib/Twig/Environment.php(403) : eval()'d code:24
+PHP message: PHP  16. Twig_Template->displayWithErrorHandling() /var/www/ld2/vendor/twig/twig/lib/Twig/Template.php:355
+PHP message: PHP  17. __TwigTemplate_9bf68c741891008c8e3aba5ffaaf9419d01969db720a9831259cf56a94e65ccf->doDisplay() /v
+2016/09/01 22:18:06 [error] 2726#2726: *47 FastCGI sent in stderr: "PHP message: PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, cannot access protected method LD2Controller\SiteController::generate() in /var/www/ld2/vendor/twig/twig/lib/Twig/Environment.php(403) : eval()'d code on line 32
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0
+PHP message: PHP   2. require() /var/www/ld2/index.php:4
+PHP message: PHP   3. require() /var/www/ld2/setup.php:13
+PHP message: PHP   4. require() /var/www/ld2/app.php:49
+PHP message: PHP   5. LD2Controller\StartController->indexAction() /var/www/ld2/config/router.php:38
+PHP message: PHP   6. LD2\BaseController->forward() /var/www/ld2/site/StartController.php:16
+PHP message: PHP   7. call_user_func_array:{/var/www/ld2/lib/BaseController.php:89}() /var/www/ld2/lib/BaseController.php:89
+PHP message: PHP   8. LD2Controller\SiteController->loginAction() /var/www/ld2/lib/BaseController.php:89
+PHP message: PHP   9. LD2\BaseController->render() /var/www/ld2/site/SiteController.php:39
+PHP message: PHP  10. Twig_Environment->render() /var/www/ld2/lib/BaseController.php:103
+PHP message: PHP  11. Twig_Template->render() /var/www/ld2/vendor/twig/twig/lib/Twig/Environment.php:347
+PHP message: PHP  12. Twig_Template->display() /var/www/ld2/vendor/twig/twig/lib/Twig/Template.php:366
+PHP message: PHP  13. Twig_Template->displayWithErrorHandling() /var/www/ld2/vendor/twig/twig/lib/Twig/Template.php:355
+PHP message: PHP  14. __TwigTemplate_cda4d570efcfba83c8da9a5cf7d283e449ced9211e1b2f3547d2467bbb4b4e2a->doDisplay() /var/www/ld2/vendor/twig/twig/lib/Twig/Template.php:387
+PHP message: PHP  15. Twig_Template->display() /var/www/ld2/vendor/twig/twig/lib/Twig/Environment.php(403) : eval()'d code:24
+PHP message: PHP  16. Twig_Template->displayWithErrorHandling() /var/www/ld2/vendor/twig/twig/lib/Twig/Template.php:355
+PHP message: PHP  17. __TwigTemplate_9bf68c741891008c8e3aba5ffaaf9419d01969db720a9831259cf56a94e65ccf->doDisplay() /v
+2016/09/01 22:18:48 [error] 2726#2726: *51 FastCGI sent in stderr: "PHP message: PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, cannot access protected method LD2Controller\SiteController::generate() in /var/www/ld2/vendor/twig/twig/lib/Twig/Environment.php(403) : eval()'d code on line 32
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0
+PHP message: PHP   2. require() /var/www/ld2/index.php:4
+PHP message: PHP   3. require() /var/www/ld2/setup.php:13
+PHP message: PHP   4. require() /var/www/ld2/app.php:49
+PHP message: PHP   5. LD2Controller\StartController->indexAction() /var/www/ld2/config/router.php:38
+PHP message: PHP   6. LD2\BaseController->forward() /var/www/ld2/site/StartController.php:16
+PHP message: PHP   7. call_user_func_array:{/var/www/ld2/lib/BaseController.php:89}() /var/www/ld2/lib/BaseController.php:89
+PHP message: PHP   8. LD2Controller\SiteController->loginAction() /var/www/ld2/lib/BaseController.php:89
+PHP message: PHP   9. LD2\BaseController->render() /var/www/ld2/site/SiteController.php:39
+PHP message: PHP  10. Twig_Environment->render() /var/www/ld2/lib/BaseController.php:103
+PHP message: PHP  11. Twig_Template->render() /var/www/ld2/vendor/twig/twig/lib/Twig/Environment.php:347
+PHP message: PHP  12. Twig_Template->display() /var/www/ld2/vendor/twig/twig/lib/Twig/Template.php:366
+PHP message: PHP  13. Twig_Template->displayWithErrorHandling() /var/www/ld2/vendor/twig/twig/lib/Twig/Template.php:355
+PHP message: PHP  14. __TwigTemplate_cda4d570efcfba83c8da9a5cf7d283e449ced9211e1b2f3547d2467bbb4b4e2a->doDisplay() /var/www/ld2/vendor/twig/twig/lib/Twig/Template.php:387
+PHP message: PHP  15. Twig_Template->display() /var/www/ld2/vendor/twig/twig/lib/Twig/Environment.php(403) : eval()'d code:24
+PHP message: PHP  16. Twig_Template->displayWithErrorHandling() /var/www/ld2/vendor/twig/twig/lib/Twig/Template.php:355
+PHP message: PHP  17. __TwigTemplate_9bf68c741891008c8e3aba5ffaaf9419d01969db720a9831259cf56a94e65ccf->doDisplay() /v
+2016/09/01 22:20:40 [error] 2726#2726: *59 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Twig_Error_Loader: Unable to find template "twig/login.twig" (looked into: /var/www/ld2/res/templates/twig). in /var/www/ld2/vendor/twig/twig/lib/Twig/Loader/Filesystem.php:215
+Stack trace:
+#0 /var/www/ld2/vendor/twig/twig/lib/Twig/Loader/Filesystem.php(139): Twig_Loader_Filesystem->findTemplate('twig/login.twig')
+#1 /var/www/ld2/vendor/twig/twig/lib/Twig/Environment.php(312): Twig_Loader_Filesystem->getCacheKey('twig/login.twig')
+#2 /var/www/ld2/vendor/twig/twig/lib/Twig/Environment.php(378): Twig_Environment->getTemplateClass('twig/login.twig', NULL)
+#3 /var/www/ld2/vendor/twig/twig/lib/Twig/Environment.php(347): Twig_Environment->loadTemplate('twig/login.twig')
+#4 /var/www/ld2/lib/BaseController.php(103): Twig_Environment->render('twig/login.twig', Array)
+#5 /var/www/ld2/site/SiteController.php(39): LD2\BaseController->render('twig/login.twig')
+#6 [internal function]: LD2Controller\SiteController->loginAction()
+#7 /var/www/ld2/lib/BaseController.php(89): call_use" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/09/01 22:24:06 [error] 2726#2726: *91 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Symfony\Component\Routing\Exception\RouteNotFoundException: Unable to generate a URL for the named route "reg" as such route does not exist. in /var/www/ld2/vendor/symfony/routing/Generator/UrlGenerator.php:130
+Stack trace:
+#0 /var/www/ld2/lib/BaseController.php(93): Symfony\Component\Routing\Generator\UrlGenerator->generate('reg', Array, 2)
+#1 /var/www/ld2/vendor/twig/twig/lib/Twig/Environment.php(403) : eval()'d code(46): LD2\BaseController->generate('reg')
+#2 /var/www/ld2/vendor/twig/twig/lib/Twig/Template.php(167): __TwigTemplate_cda4d570efcfba83c8da9a5cf7d283e449ced9211e1b2f3547d2467bbb4b4e2a->block_page_content(Array, Array)
+#3 /var/www/ld2/vendor/twig/twig/lib/Twig/Environment.php(403) : eval()'d code(50): Twig_Template->displayBlock('page_content', Array, Array)
+#4 /var/www/ld2/vendor/twig/twig/lib/Twig/Template.php(387): __TwigTemplate_9bf68c741891008c8e3aba5ffaaf9419d01969db720a9831259cf56a94e65ccf->doDisplay(Array, Array)
+#5 /var/www/ld2/vendor/twig/twig/" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/09/01 23:08:20 [error] 2726#2726: *135 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught LogicException: A function must be an instance of Twig_FunctionInterface or Twig_SimpleFunction in /var/www/ld2/vendor/twig/twig/lib/Twig/Environment.php:1093
+Stack trace:
+#0 /var/www/ld2/lib/BaseController.php(120): Twig_Environment->addFunction('random', Array)
+#1 /var/www/ld2/lib/BaseController.php(107): LD2\BaseController->addTwigFunctions(Object(Twig_Environment))
+#2 /var/www/ld2/site/SiteController.php(41): LD2\BaseController->render('login.twig')
+#3 /var/www/ld2/config/router.php(38): LD2Controller\SiteController->loginAction()
+#4 /var/www/ld2/app.php(42): require('/var/www/ld2/co...')
+#5 /var/www/ld2/setup.php(13): require('/var/www/ld2/ap...')
+#6 /var/www/ld2/index.php(4): require('/var/www/ld2/se...')
+#7 {main}
+  thrown in /var/www/ld2/vendor/twig/twig/lib/Twig/Environment.php on line 1093" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /login HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/reg"

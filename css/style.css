@@ -1,166 +1,56 @@
-﻿@font-face {
-    font-family: Maincraft; /* Имя шрифта */
-    src: url('../res/fonts/mc.ttf'); /* Путь к файлу со шрифтом */
+﻿body {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #ffffff;
 }
 
-body {
-    /*background-color: #deceaf;*/
-    margin: auto;
-    max-width: 1024px;
-    font-family:arial, sans-serif;
-    padding: 3px;
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: 1px auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+    margin-bottom: 10px;
+}
+.form-signin .checkbox {
+    font-weight: normal;
+}
+.form-signin .form-control {
+    position: relative;
+    height: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+}
+.form-signin .form-control:focus {
+    z-index: 2;
+}
+.form-signin input {
+    margin: 3px;
+}
+.form-signin input[type="text"] {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border: 2px solid #7b7b7b;
+}
+.form-signin input[type="password"] {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border: 2px solid #7b7b7b;
 }
 
-.container, .container-fluid {
-    text-align: center;
-}
-
-.login_form {
-    border-color: rgba(21, 23, 28, 0.56);
-    border-style: double;
-    border-weight: 3px;
-    background-color: rgba(43, 54, 62, 0.22);
-    padding: 3px 3px 3px 3px;
-    max-width: 280px;
-    font-weight: bold;
-    color: #a90000;
-    margin: 0 auto;
-}
-
-.login_form > input[placeholder]{
-    font-family: Maincraft;
-}
-
-
-.wh1{
-    background: #FFD700;
-    color: #000000;
-    font-weight: bold;
-    border: 1px solid #FF8C00;
-    margin: 2px 1px 1px 1px;width: 100px;
-    padding: 2px;
-    height: 24px;
-}
-
-.content {
-    margin: 0 auto;
-}
-
-
-.button {
-    border: none;
-}
-
-
-
-.bb-code .button {
-    padding: 4px;
-    margin: 4px;
-}
-
-/*a:link, a:active, a:visited {
-    color: #000;
-    text-decoration: none;
-}*/
-
-a:link, a:active, a:visited {
-    color: #4d606a;
-    text-decoration: none;
-    /*display: inline-block;*/
-    margin: 3px 1px 3px 1px;
-}
-
-.strong {
-    font-weight: bold;
-}
-
-a:hover {
-    /*border-bottom: 1px dotted #e5d2a6;*/
-    text-decoration: none;
-}
-
-img {
-    vertical-align: middle;
-    border-style: none;
-}
-
-.head {
-    height: 70px;
-    background: #c7b79b repeat-x;
-    border-bottom: 2px solid #e5d2a6;
-    text-align: left;
-}
-
-.f {
-    color: #3b3b2e;
-    background: #a19276 repeat-x top;
-    border-top: 2px solid #3b3b2e;
-    border-bottom: 2px solid #3b3b2e;
-    padding: 2px 0px 2px 5px;
-    font-size: 14px;
-    font-weight: bold;
-
-}
-
-.d {
-    color: #3b3b2e;
-    text-align: center;
-    background: #a19276 repeat-x top;
-    border-top: 2px solid #3b3b2e;
-    border-bottom: 2px solid #3b3b2e;
-    padding: 2px 0px 2px 5px;
-    font-size: 14px;
-    font-weight: bold;
-}
-
-.link {
-    background: #3b3b2e no-repeat right;
-    border-top: 2px solid #e5d2a6;
-    border-bottom: 2px solid #e5d2a6;
-    padding: 3px 3px 5px 3px;
-    color: #e5d2a6;
-}
-
-.link a {
-    padding-bottom: 1px;
-}
-
-.copy {
-    color: #3b3b2e;
-    background: #052a40 repeat-x top;
-    border-top: 2px solid #3b3b2e;
-    border-bottom: 2px solid #3b3b2e;
-    padding: 2px 0px 2px 5px;
-    font-size: 12px;
+.form-signin input[placeholder]{
     font-weight: bold;
     text-align: center;
 }
-
-.ban {
-    background: #3b3b2e no-repeat left bottom;
-    border-top: 2px solid #e5d2a6;
-    padding: 3px 3px 5px 3px;
-    color: #e5d2a6;
-    text-align: center;
+.form-signin > .captcha {
+    padding: 5px;
 }
 
-.ram{
-    border: 1px solid #191970;
-    background-color: #B0E0E6;
-    color: #000000;
-    margin: 1px 1px 1px 1px;
-    max-width: 290px;
-    height: 32px;
-    font-family: serif;
-    font-weight: bold;
-}
-
-input[placeholder]{
-    text-align: center;
-    font-weight: bold;
-}
-
-
-.w300 {
-    max-width: 300px;
+.nav-menu {
+    margin: 3px auto;
+    max-width: 330px;
 }

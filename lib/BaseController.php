@@ -6,7 +6,11 @@
 namespace LD2;
 
 
+use Gregwar\Captcha\CaptchaBuilder;
+use LD2\Helper\ViewHelper;
+use LD2\View\PathFunction;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Router;
 
 class BaseController
@@ -19,6 +23,10 @@ class BaseController
      * @var Router
      */
     protected $router;
+    /**
+     * @var Request
+     */
+    protected $request;
     public function __construct()
     {
         $this->before();
@@ -88,7 +96,79 @@ class BaseController
         call_user_func_array([$class, $action], $reqParams);
     }
 
-    protected function generate($name, $options = [], $ref = Router::RELATIVE_PATH){
+    public function generate($name, $options = [], $ref = Router::RELATIVE_PATH){
         return "/".$this->router->getGenerator()->generate($name, $options, $ref);
+    }
+
+    public function render(string $template, array $params = []){
+        /** @var \Twig_Environment $twig */
+        $twig = $this->getApp()->getContainer()->get("twig");
+        //$twig->addFunction(new PathFunction('path'))
+        $this->addTwigFunctions($twig);
+        $this->setBaseParamsToTwig($params);
+        ob_start();
+        echo $twig->render($template, $params);
+        ob_end_flush();
+    }
+
+    /**
+     * @param \Twig_Environment$twig
+     */
+    private function addTwigFunctions(\Twig_Environment &$twig){
+        $pathFunction =new \Twig_SimpleFunction('path', [$this, 'generate']);
+        $twig->addFunction('path', $pathFunction);
+        $twig->addFunction('random', new \Twig_SimpleFunction('random', [ViewHelper::class, 'random']));
+        $twig->addFunction('captcha', new \Twig_SimpleFunction('captcha', function($code){
+            /** @var CaptchaBuilder $captcha */
+            $captcha = $this->getApp()->getContainer()->get("captcha");
+            $captcha->setPhrase($code);
+            $captcha->setBackgroundColor(255,255,255);
+            $captcha->build();
+            $_SESSION["captcha"] = $code;
+            return $captcha->inline();
+        }));
+    }
+
+    private function setBaseParamsToTwig(array &$params){
+        /** @var Database $pdo */
+        $pdo = $this->getContainer()->get("pdo");
+        $sqlTime = $pdo->getSqlTime();
+        $params["gen_time"] = sprintf("ген: %0.4f сек", (microtime(true)-$_SERVER["REQUEST_TIME_FLOAT"]));
+        $params["sql_time"] = sprintf("Sql: %0.4f сек", $sqlTime);
+        $authors = $this->getContainer()->get("composer.json")->authors;
+        $a = "";
+        foreach ($authors as $author){
+            if($a == ""){
+                $a .= $author->name;
+            } else {
+                $a .= ", ".$author->name.">";
+            }
+        }
+        $params["copyrights"] = $a;
+        $params["version"] = $this->getContainer()->get("composer.json")->version;
+        $params["title"] = "Лайкдимион";
+    }
+
+    /**
+     * @return ContainerBuilder
+     */
+    protected function getContainer(){
+        return $this->getApp()->getContainer();
+    }
+
+    /**
+     * @return Request
+     */
+    public function getRequest(): Request
+    {
+        return $this->request;
+    }
+
+    /**
+     * @param Request $request
+     */
+    public function setRequest(Request $request)
+    {
+        $this->request = $request;
     }
 }

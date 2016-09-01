@@ -122,9 +122,9 @@ class View
         $a = "";
         foreach ($authors as $author){
             if($a == ""){
-                $a .= $author->nickname;
+                $a .= $author->name;
             } else {
-                $a .= ", ".$author->nickname.">";
+                $a .= ", ".$author->name.">";
             }
         }
         return str_replace("%copyrights%", "&copy; <b>".$a."</b>, 2016", $buffer);

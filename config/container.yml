@@ -10,6 +10,7 @@ parameters:
   db_password: "AaFrv54$5sdf"
   db_host: "localhost"
   db_dbname: "likedimion"
+  #root_dir: '@=constant("ROOT")'
 
 services:
   pdo:
@@ -22,6 +23,12 @@ services:
     class: 'LD2\EventDispatcher'
   captcha:
     class: 'Gregwar\Captcha\CaptchaBuilder'
+  twig_loader:
+    class: 'Twig_Loader_Filesystem'
+    arguments: ['%root_dir%/res/templates/twig']
+  twig:
+    class: 'Twig_Environment'
+    arguments: ['@twig_loader', ['%root_dir%/res/cache/twig']]
   base_pdo_evd_service:
     abstract: true
     calls:

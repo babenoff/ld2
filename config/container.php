@@ -9,10 +9,11 @@
 $container = new \Symfony\Component\DependencyInjection\ContainerBuilder();
 $locator = new \Symfony\Component\Config\FileLocator(dirname(__FILE__));
 $loader = new \Symfony\Component\DependencyInjection\Loader\YamlFileLoader($container, $locator);
+
 $loader->load("container.yml");
 
 $container->set("composer.json", json_decode(file_get_contents(__DIR__."/../composer.json")));
-
+$container->setParameter("root_dir", ROOT);
 $container->compile();
 
 /*$db = new \LD2\Database(

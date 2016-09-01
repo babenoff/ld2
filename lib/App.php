@@ -15,6 +15,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 class App
 {
+    const ROOT = ROOT;
     /**
      * @var View
      */

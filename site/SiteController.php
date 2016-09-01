@@ -11,7 +11,8 @@ use LD2\BaseController;
 
 class SiteController extends BaseController
 {
-    public function loginAction(){
+    public function _loginAction()
+    {
         $page = <<<LOGIN
 <form class="login_form" action="login.php?action=connect" method="post">
     <div>Логин:</div>
@@ -35,19 +36,26 @@ LOGIN;
         $this->getApp()->getView()->display($page, [], "Лайкдимион");
     }
 
-    public function registrationAction(){
+    public function loginAction()
+    {
+        $this->render('login.twig');
+    }
+
+
+    public function _registrationAction()
+    {
 
         $page = "";
         $errors = [];
         $tmp = "";
-        if(isset($_POST["username"])){
+        if (isset($_POST["username"])) {
             /** @var \LD2\Repository\IHeroRepository $heroRepo */
             $heroRepo = $this->getApp()->getContainer()->get("hero_repository");
             $tmp .= "";
-        }  else {
+        } else {
             /** @var CaptchaBuilder $captcha */
             $captcha = $this->getApp()->getContainer()->get("captcha");
-            $code = random_int(0,9999);
+            $code = random_int(0, 9999);
             $captcha->setPhrase($code);
             $captcha->build();
             $_SESSION["captcha"] = $captcha;
@@ -82,14 +90,29 @@ LOGIN;
 <a class="strong" href="{$this->generate("login")}">на главную</a>
 REG_;
         }
-        if(count($errors)){
-            $page .="<div class='alert alert-danger'>";
-            foreach ($errors as $error){
-                $page .= "<div>".$error."</div>";
+        if (count($errors)) {
+            $page .= "<div class='alert alert-danger'>";
+            foreach ($errors as $error) {
+                $page .= "<div>" . $error . "</div>";
             }
-            $page .="</div>";
+            $page .= "</div>";
         }
-        $page .=$tmp;
+        $page .= $tmp;
         $this->getApp()->getView()->display($page, [], "Регистрация", false);
+    }
+
+    public function registrationAction()
+    {
+        $params = [];
+        if(false !== $this->getRequest()->get("username", false)){
+            $this->regProcess($errors);
+        } else {
+            $this->render("registration.twig");
+        }
+    }
+
+    protected function regProcess(array &$params)
+    {
+
     }
 }

@@ -1,0 +1,25 @@
+{# 
+ #   Copyright 2016 Maksim Babenko <mb.babenoff@yandex.ru>
+ #   Created by Babenoff at 01.09.16 - 21:31  
+ #}
+
+{% extends 'layout.twig' %}
+
+{% block page_content %}
+    <form class="form-signin" action="{{ path('login') }}" method="post">
+        <h2 class="form-signin-heading">Вход в игру</h2>
+        <label for="inputLogin" class="sr-only">Логин</label>
+        <input type="text" id="inputLogin" class="form-control" placeholder="Логин" required autofocus>
+        <label for="inputPassword" class="sr-only">Пароль</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Пароль" required>
+        {#<div class="checkbox">
+            <label>
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
+        </div>#}
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Вход</button>
+    </form>
+    <div class="nav-menu list-group">
+        <a class="list-group-item list-group-item-action list-group-flush list-group-item-text text-xl-center text-capitalize" href="{{ path('registration') }}">Регистрация</a>
+    </div>
+{% endblock %}

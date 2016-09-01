@@ -1,0 +1,49 @@
+{# 
+ #   Copyright 2016 Maksim Babenko <mb.babenoff@yandex.ru>
+ #   Created by Babenoff at 01.09.16 - 22:54  
+ #}
+
+{% extends 'layout.twig' %}
+
+{% block errors %}
+
+{% endblock %}
+{% block page_header %}
+    <div class="card-header text-xl-center text-muted">
+        <h2 class="form-signin-heading">Регистрация</h2>
+    </div>
+{% endblock %}
+{% block page_content %}
+    {% if regOk %}
+
+    {% else %}
+        <form class="form-signin" action="{{ path('registration') }}" method="post">
+            <label for="inputLogin" class="sr-only">Логин</label>
+            <input type="text" id="inputLogin" name="username" class="form-control" placeholder="Логин" required
+                   autofocus>
+            <label for="inputPassword" class="sr-only">Пароль</label>
+            <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Пароль"
+                   required>
+            <label for="inputPasswordC" class="sr-only">Повторите пароль</label>
+            <input type="password" id="inputPasswordC" name="password" class="form-control"
+                   placeholder="Повторите пароль" required>
+            <div class="captcha text-xl-center"><img src="{{ captcha(random(0000,9999)) }}"/></div>
+            <div class="clearfix"></div>
+            <label for="inputPasswordC" class="sr-only">код с картинки</label>
+            <input type="text" id="inputCaptcha" name="username" class="form-control" placeholder="код с картинки"
+                   required>
+            {#<div class="checkbox">
+                <label>
+                    <input type="checkbox" value="remember-me"> Remember me
+                </label>
+            </div>#}
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Регистрация</button>
+        </form>
+        <div class="nav-menu">
+            <div class="list-group text-xl-center">
+                <a class="list-group-item list-group-item-action text-uppercase"
+                   href="{{ path('base') }}">на главную</a>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

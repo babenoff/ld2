@@ -12,6 +12,7 @@ use Symfony\Component\Routing\RequestContext;
 $routeCollection = new \Symfony\Component\Routing\RouteCollection();
 $loader = new YamlFileLoader(new FileLocator(__DIR__));
 $r = new \Symfony\Component\Routing\Router($loader, "routes.yml", [], new RequestContext("/"));
+$twig = new Twig_Loader_Filesystem(ROOT."/res/templates");
 $request = Request::createFromGlobals();
 
 try {
@@ -33,7 +34,7 @@ if(!class_exists($controller)) {
 $class = new $controller();
 $class->setApp($app);
 $class->setRouter($r);
-
+$class->setRequest($request);
 call_user_func_array([$class, $action], $reqParams);
 
 

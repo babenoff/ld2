@@ -1,0 +1,51 @@
+{# 
+ #   Copyright 2016 Maksim Babenko <mb.babenoff@yandex.ru>
+ #   Created by Babenoff at 01.09.16 - 21:21  
+ #}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css" crossorigin="anonymous">
+    <!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>{{ title }}</title>
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <div class="card-block">
+            <div class="row">
+                {% block page_header %}
+                    <div class="card-header text-xl-center text-muted"><h2>{{ title }}</h2></div>
+                {% endblock %}
+            </div>
+            <div class="row">
+                {% block errors %}
+                    {#errors#}
+                {% endblock %}
+                {% block page_content %}
+                    {#content#}
+                {% endblock %}
+            </div>
+            <div class="row">
+                {% block page_footer %}
+                    <div class="card-footer text-muted text-xl-center">
+                        <div>{{ gen_time }}</div>
+                        <div>{{ sql_time }}</div>
+                        <div>{{ copyrights }}</div>
+                        <div>Версия: <strong>{{ version }}</strong></div>
+                    </div>
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/jquery-3.1.0.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+</body>
+</html>
