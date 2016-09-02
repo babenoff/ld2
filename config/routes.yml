@@ -1,19 +1,21 @@
 base:
   path: /
   defaults: {_controller: 'LD2Controller\StartController:indexAction'}
-
 login:
   path: /login
   defaults: {_controller: 'LD2Controller\SiteController:loginAction'}
-
+connect:
+  path: /connect/{username}/{password}
+  defaults: {_controller: 'LD2Controller\SiteController:connectAction'}
+  requirements:
+      username: '.*'
+      password: '.*'
 registration:
   path: /reg
   defaults: {_controller: 'LD2Controller\SiteController:registrationAction'}
-
 game_main:
   path: /game.main
   defaults: {_controller: 'LD2Controller\GameController:mainAction'}
-
 err404:
   path: /err404
   defaults: {_controller: 'LD2Controller\ErrorController:err404Action'}

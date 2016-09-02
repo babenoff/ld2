@@ -8,3 +8,8 @@ composer.lock
 .git
 log/*
 wiki/*
+/log/
+Будет удалено images/
+Будет удалено lib/Listeners/
+Будет удалено lib/Router/
+Будет удалено res/cache/

@@ -9,8 +9,10 @@ namespace LD2;
 use Gregwar\Captcha\CaptchaBuilder;
 use LD2\Helper\ViewHelper;
 use LD2\View\PathFunction;
+use LD2Controller\ErrorController;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Routing\Exception\RouteNotFoundException;
 use Symfony\Component\Routing\Router;
 
 class BaseController
@@ -27,8 +29,9 @@ class BaseController
      * @var Request
      */
     protected $request;
-    public function __construct()
+    public function __construct(App $app)
     {
+        $this->setApp($app);
         $this->before();
     }
 
@@ -72,8 +75,8 @@ class BaseController
         $this->router = $router;
     }
 
-    public function forward($name){
-        $path = $this->generate($name);
+    public function forward($name, array $options = []){
+        $path = $this->generate($name, $options);
         try {
             $params = $this->router->match($path);
         } catch (\Symfony\Component\Routing\Exception\ResourceNotFoundException $e){
@@ -90,14 +93,24 @@ class BaseController
             $controller = "LD2Controller\\ErrorContoller";
             $action = "err404Action";
         }
-        $class = new $controller();
+        $class = new $controller($this->getApp());
+        if(!method_exists($class, $action)){
+            $class = new ErrorController($this->getApp());
+            $action = "err404Action";
+        }
         $class->setApp($this->getApp());
         $class->setRouter($this->getRouter());
+        $class->setRequest($this->getRequest());
         call_user_func_array([$class, $action], $reqParams);
     }
 
-    public function generate($name, $options = [], $ref = Router::RELATIVE_PATH){
-        return "/".$this->router->getGenerator()->generate($name, $options, $ref);
+    public function generate($name, $options = [], $ref = Router::RELATIVE_PATH):string {
+        try {
+            $url = "/" . $this->router->getGenerator()->generate($name, $options, $ref);
+        }catch (RouteNotFoundException $e){
+            $url = "/". $this->router->generate("/err404");
+        }
+        return $url;
     }
 
     public function render(string $template, array $params = []){

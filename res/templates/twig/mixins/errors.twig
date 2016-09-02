@@ -1,0 +1,12 @@
+{# 
+ #   Copyright 2016 Maksim Babenko <mb.babenoff@yandex.ru>
+ #   Created by Babenoff at 02.09.16 - 8:00  
+ #}
+
+    {% if errs != false %}
+        <div class="nav-menu list-group text-xl-center">
+            {% for error in errs %}
+                <div class="alert alert-danger">{{ error }}</div>
+            {% endfor %}
+        </div>
+    {% endif %}

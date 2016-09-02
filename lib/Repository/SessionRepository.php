@@ -134,7 +134,7 @@ class SessionRepository extends BaseRepository implements \SessionHandlerInterfa
      */
     public function gc($maxlifetime)
     {
-        $sql = "DELETE FROM sessions WHERE ((UNIX_TIMESTAMP(touched) + ".$maxlifetime.") < ".$maxlifetime.")";
+        $sql = "DELETE FROM sessions WHERE ((UNIX_TIMESTAMP(touched) + ".$maxlifetime.") < UNIX_TIMESTAMP())";
         $q = $this->getPdo()->prepare($sql);
         $res = $q->execute();
         return ($res) ? true : false;

@@ -3,13 +3,15 @@ parameters:
   game_title: "Лайкдимион"
   cookie_name: "Likedimion2"
   timezone: "Europe/Moscow"
-  session_lifetime: 300
   debug: false
   db_engine: "mysql"
   db_user: "ld2"
   db_password: "AaFrv54$5sdf"
   db_host: "localhost"
   db_dbname: "likedimion"
+  session.name: "LD2SID"
+  session.gc_maxlifetime: 300
+  session.gc_propability: 5
   #root_dir: '@=constant("ROOT")'
 
 services:

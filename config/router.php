@@ -31,8 +31,7 @@ if(!class_exists($controller)) {
     $controller = "LD2Controller\\ErrorContoller";
     $action = "err404Action";
 }
-$class = new $controller();
-$class->setApp($app);
+$class = new $controller($app);
 $class->setRouter($r);
 $class->setRequest($request);
 call_user_func_array([$class, $action], $reqParams);

@@ -14,97 +14,61 @@ use LD2\Repository\HeroRepository;
 use LD2\Repository\IHeroRepository;
 use LD2\Repository\IUserRepository;
 use LD2\Repository\UserRepository;
+use Symfony\Component\Routing\Exception\RouteNotFoundException;
 
 class SiteController extends BaseController
 {
-    public function _loginAction()
+    /**
+     * @var IUserRepository
+     */
+    protected $userRepo;
+
+    protected function before()
     {
-        $page = <<<LOGIN
-<form class="login_form" action="login.php?action=connect" method="post">
-    <div>Логин:</div>
-    <div>
-        <input class="ram form-control" name="username" placeholder="Логин" />
-    </div>
-    <div>Пароль:</div>
-    <div>
-        <input class="ram form-control" name="password" placeholder="Пароль" />
-    </div>
-    <div>
-        <input class="button btn-primary" type="submit" value="Вход" />
-    </div>
-</form>
-<hr/>
-<div>
-<a class="strong" href="{$this->generate("registration")}">Регистрация</a>
-</div>
-<a class="strong" href="/login.php?action=about">Об игре</a>
-LOGIN;
-        $this->getApp()->getView()->display($page, [], "Лайкдимион");
+        parent::before();
+        $this->userRepo = $this->getContainer()->get("user_repository");
     }
+
 
     public function loginAction()
     {
-        $this->render('login.twig');
+        $uname = $this->request->get("username", false);
+        $pwd = $this->request->get("username", false);
+        if (false === $uname) {
+            $this->render('login.twig');
+        } else {
+                $this->forward('connect', [
+                    "username" => $uname,
+                    "password" => $this->request->get("password")
+                ]);
+        }
     }
 
-
-    public function _registrationAction()
+    public function connectAction($username, $password)
     {
-
-        $page = "";
-        $errors = [];
-        $tmp = "";
-        if (isset($_POST["username"])) {
-            /** @var \LD2\Repository\IHeroRepository $heroRepo */
-            $heroRepo = $this->getApp()->getContainer()->get("hero_repository");
-            $tmp .= "";
-        } else {
-            /** @var CaptchaBuilder $captcha */
-            $captcha = $this->getApp()->getContainer()->get("captcha");
-            $code = random_int(0, 9999);
-            $captcha->setPhrase($code);
-            $captcha->build();
-            $_SESSION["captcha"] = $captcha;
-            $tmp .= <<<REG_
-<form class="login_form" action="login.php" method="post">
-    <div>Логин:</div>
-    <div>
-        <input class="ram form-control" name="username" placeholder="Логин" />
-    </div>
-    <div>Пароль:</div>
-    <div>
-        <input class="ram form-control" name="password" placeholder="Пароль" />
-    </div>
-    <div>Повторите пароль:</div>
-    <div>
-        <input class="ram form-control" name="password_c" placeholder="Пароль" />
-    </div>
-    <div>Имя персонажа (будет видно в игре):</div>
-    <div>
-        <input class="ram form-control" name="title" placeholder="Имя персонажа" />
-    </div>
-    <div>
-        <img src="{$captcha->inline()}" />
-        <input class="ram form-control" name="captcha" placeholder="Код с картинки" />
-    </div>
-    <div>
-        <input class="button btn-primary" type="submit" value="Регистрация" />
-    </div>
-</form>
-<hr />
-
-<a class="strong" href="{$this->generate("login")}">на главную</a>
-REG_;
-        }
-        if (count($errors)) {
-            $page .= "<div class='alert alert-danger'>";
-            foreach ($errors as $error) {
-                $page .= "<div>" . $error . "</div>";
+            try{
+                if(preg_match(UserRepository::EMAIL_REGEX, $username)){
+                    $user = $this->userRepo->findByEmail($username);
+                } else {
+                    $user = $this->userRepo->findByUsername(htmlspecialchars($username));
+                }
+                if(password_verify($password, $user["password"])){
+                    $_SESSION["username"] = $user["username"];
+                    header("Location: ".$this->generate("game_main"));
+                } else {
+                    $this->render('login.twig', [
+                        "errs" => [
+                            "Неверная комбинация логин/пароль"
+                        ]
+                    ]);
+                }
+            }catch (UserRepositoryException $e){
+                $this->render('login.twig', [
+                    "errs" => [
+                        "Неверная комбинация логин/пароль"
+                    ]
+                ]);
             }
-            $page .= "</div>";
-        }
-        $page .= $tmp;
-        $this->getApp()->getView()->display($page, [], "Регистрация", false);
     }
 
     public function registrationAction()
@@ -113,13 +77,13 @@ REG_;
             "errs" => []
         ];
         if (false !== $this->getRequest()->get("email", false)) {
-            if($res = $this->regProcess($params)){
+            if ($res = $this->regProcess($params)) {
                 $params["regOk"] = 1;
                 $params["username"] = $res[0];
                 $params["password"] = $res[1];
             }
         }
-            $this->render("registration.twig", $params);
+        $this->render("registration.twig", $params);
     }
 
     protected function regProcess(array &$params)
@@ -134,7 +98,7 @@ REG_;
         $emailMatches = [];
         if ($password and $confirmPassword) {
             if (preg_match("/(?=.{4,20}$)(?![_.-])(?!.*[_.-]{2})[a-zа-яё0-9_\-\s]+([^._-])/i", $nickname)) {
-                if (preg_match("/^(?'Username'[-\w\d\.]+?)(?:\s+at\s+|\s*@\s*|\s*(?:[\[\]@]){3}\s*)(?'Domain'[-\w\d\.]*?)\s*(?:dot|\.|(?:[\[\]dot\.]){3,5})\s*(?'TLD'\w+)$/i", $email, $emailMatches)) {
+                if (preg_match(UserRepository::EMAIL_REGEX, $email, $emailMatches)) {
                     if ($password == $confirmPassword) {
                         if ($code == $_SESSION["captcha"]) {
                             /** @var IUserRepository $userRepo */
@@ -152,19 +116,19 @@ REG_;
                                 ];
                                 $authors = $this->getContainer()->get("composer.json")->authors;
                                 $isAdmin = false;
-                                foreach ($authors as $author){
-                                    if($author->email == $email){
+                                foreach ($authors as $author) {
+                                    if ($author->email == $email) {
                                         $isAdmin = true;
                                     }
                                 }
-                                if($isAdmin){
+                                if ($isAdmin) {
                                     $user["role"] = UserRepository::ADMIN;
                                 } else {
                                     $user["role"] = UserRepository::BASE;
                                 }
                                 try {
                                     $userRepo->create($user);
-                                    try{
+                                    try {
                                         $hero = $heroRepo->getHeroByTitle($nickname);
                                     } catch (HeroRepositoryException $e) {
                                         $hero = [
@@ -187,14 +151,14 @@ REG_;
                                             "hero_bank" => [],
                                             "hero_equip" => []
                                         ];
-                                        try{
+                                        try {
                                             $heroRepo->create($hero);
                                             return [$user["username"], $password];
-                                        } catch (HeroRepositoryException $e){
+                                        } catch (HeroRepositoryException $e) {
                                             $params["errs"][] = $e->getMessage();
                                         }
                                     }
-                                }catch (UserRepositoryException $e){
+                                } catch (UserRepositoryException $e) {
                                     $params["errs"][] = $e->getMessage();
                                 }
                             }

@@ -4,15 +4,8 @@
  #}
 
 {% extends 'layout.twig' %}
-
 {% block errors %}
-    {% if errs != false %}
-        <div class="nav-menu list-group text-xl-center">
-            {% for error in errs %}
-                <div class="alert alert-danger">{{ error }}</div>
-            {% endfor %}
-        </div>
-    {% endif %}
+    {% include 'mixins/errors.twig' %}
 {% endblock %}
 {% block page_header %}
     <div class="card-header text-xl-center text-muted">

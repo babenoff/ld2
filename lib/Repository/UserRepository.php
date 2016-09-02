@@ -13,6 +13,7 @@ use LD2\QueryBuilder\Additional\Field;
 
 class UserRepository extends BaseRepository implements IUserRepository
 {
+    const EMAIL_REGEX = "/^(?'Username'[-\w\d\.]+?)(?:\s+at\s+|\s*@\s*|\s*(?:[\[\]@]){3}\s*)(?'Domain'[-\w\d\.]*?)\s*(?:dot|\.|(?:[\[\]dot\.]){3,5})\s*(?'TLD'\w+)$/i";
     /**
      * @param int $id
      * @return array
