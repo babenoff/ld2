@@ -16,6 +16,9 @@ registration:
 game_main:
   path: /game.main
   defaults: {_controller: 'LD2Controller\GameController:mainAction'}
+game_logout:
+  path: /logout
+  defaults: {_controller: 'LD2Controller\GameController:logoutAction'}
 err404:
   path: /err404
   defaults: {_controller: 'LD2Controller\ErrorController:err404Action'}

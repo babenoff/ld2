@@ -3,7 +3,7 @@ parameters:
   game_title: "Лайкдимион"
   cookie_name: "Likedimion2"
   timezone: "Europe/Moscow"
-  debug: false
+  debug: true
   db_engine: "mysql"
   db_user: "ld2"
   db_password: "AaFrv54$5sdf"

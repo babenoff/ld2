@@ -6453,3 +6453,267 @@ Stack trace:
   thrown in /var/www/ld2/vendor/symfony/routing/Genera" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "POST /login HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/"
 2016/09/02 08:26:07 [error] 2675#2675: *61 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "POST /login HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/"
 2016/09/02 22:15:57 [error] 2826#2826: *1 open() "/var/www/ld2/favicon.ico" failed (2: No such file or directory), client: 127.0.0.1, server: mysite.local, request: "GET /favicon.ico HTTP/1.1", host: "ld2.my", referrer: "http://ld2.my/"
+2016/09/02 23:40:22 [error] 7735#7735: *307 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Twig_Error_Loader: Looks like you try to load a template outside configured directories (../layout.twig) in "game/main.twig" at line 6. in /var/www/ld2/vendor/twig/twig/lib/Twig/Loader/Filesystem.php:256
+Stack trace:
+#0 /var/www/ld2/vendor/twig/twig/lib/Twig/Loader/Filesystem.php(185): Twig_Loader_Filesystem->validateName('../layout.twig')
+#1 /var/www/ld2/vendor/twig/twig/lib/Twig/Loader/Filesystem.php(139): Twig_Loader_Filesystem->findTemplate('../layout.twig')
+#2 /var/www/ld2/vendor/twig/twig/lib/Twig/Environment.php(312): Twig_Loader_Filesystem->getCacheKey('../layout.twig')
+#3 /var/www/ld2/vendor/twig/twig/lib/Twig/Environment.php(378): Twig_Environment->getTemplateClass('../layout.twig', NULL)
+#4 /var/www/ld2/vendor/twig/twig/lib/Twig/Template.php(286): Twig_Environment->loadTemplate('../layout.twig', NULL)
+#5 /var/www/ld2/vendor/twig/twig/lib/Twig/Environment.php(403) : eval()'d code(11): Twig_Template->loadTemplate('../layout.twig', 'game/main.twig', 6)
+#6 /v" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /game.main HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/"
+2016/09/02 23:42:50 [error] 7733#7733: *317 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to a member function getGenerator() on null in /var/www/ld2/lib/BaseController.php:109
+Stack trace:
+#0 /var/www/ld2/site/IsAuthController.php(19): LD2\BaseController->generate('login')
+#1 /var/www/ld2/game/GameController.php(34): LD2Controller\IsAuthController->before()
+#2 /var/www/ld2/lib/BaseController.php(35): LD2Controller\GameController->before()
+#3 /var/www/ld2/config/router.php(34): LD2\BaseController->__construct(Object(LD2\App))
+#4 /var/www/ld2/app.php(46): require('/var/www/ld2/co...')
+#5 /var/www/ld2/setup.php(13): require('/var/www/ld2/ap...')
+#6 /var/www/ld2/index.php(4): require('/var/www/ld2/se...')
+#7 {main}
+  thrown in /var/www/ld2/lib/BaseController.php on line 109" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /logout HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/09/02 23:43:53 [error] 7733#7733: *326 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to a member function getGenerator() on null in /var/www/ld2/lib/BaseController.php:109
+Stack trace:
+#0 /var/www/ld2/site/IsAuthController.php(19): LD2\BaseController->generate('login')
+#1 /var/www/ld2/game/GameController.php(34): LD2Controller\IsAuthController->before()
+#2 /var/www/ld2/lib/BaseController.php(35): LD2Controller\GameController->before()
+#3 /var/www/ld2/config/router.php(34): LD2\BaseController->__construct(Object(LD2\App))
+#4 /var/www/ld2/app.php(46): require('/var/www/ld2/co...')
+#5 /var/www/ld2/setup.php(13): require('/var/www/ld2/ap...')
+#6 /var/www/ld2/index.php(4): require('/var/www/ld2/se...')
+#7 {main}
+  thrown in /var/www/ld2/lib/BaseController.php on line 109" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /logout HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/09/02 23:49:57 [error] 7733#7733: *359 FastCGI sent in stderr: "PHP message: PHP Warning:  ini_set() expects parameter 2 to be string, array given in /var/www/ld2/app.php on line 28
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0
+PHP message: PHP   2. require() /var/www/ld2/index.php:4
+PHP message: PHP   3. require() /var/www/ld2/setup.php:13
+PHP message: PHP   4. ini_set() /var/www/ld2/app.php:28" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /login HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/09/02 23:49:57 [error] 7733#7733: *359 FastCGI sent in stderr: "PHP message: PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /var/www/ld2/app.php:28) in /var/www/ld2/app.php on line 29
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0
+PHP message: PHP   2. require() /var/www/ld2/index.php:4
+PHP message: PHP   3. require() /var/www/ld2/setup.php:13
+PHP message: PHP   4. session_start() /var/www/ld2/app.php:29" while reading upstream, client: 127.0.0.1, server: mysite.local, request: "GET /login HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/09/02 23:49:57 [error] 7733#7733: *359 FastCGI sent in stderr: "PHP message: PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/ld2/app.php:28) in /var/www/ld2/lib/View.php on line 33
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0
+PHP message: PHP   2. require() /var/www/ld2/index.php:4
+PHP message: PHP   3. require() /var/www/ld2/setup.php:13
+PHP message: PHP   4. LD2\View->__construct() /var/www/ld2/app.php:41
+PHP message: PHP   5. header() /var/www/ld2/lib/View.php:33
+PHP message: PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/ld2/app.php:28) in /var/www/ld2/lib/View.php on line 33
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0
+PHP message: PHP   2. require() /var/www/ld2/index.php:4
+PHP message: PHP   3. require() /v" while reading upstream, client: 127.0.0.1, server: mysite.local, request: "GET /login HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/09/02 23:49:57 [error] 7733#7733: *359 FastCGI sent in stderr: "ar/www/ld2/setup.php:13
+PHP message: PHP   4. LD2\View->__construct() /var/www/ld2/app.php:41
+PHP message: PHP   5. header() /var/www/ld2/lib/View.php:33" while reading upstream, client: 127.0.0.1, server: mysite.local, request: "GET /login HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/09/02 23:49:57 [error] 7733#7733: *359 FastCGI sent in stderr: "PHP message: PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/ld2/app.php:28) in /var/www/ld2/lib/View.php on line 33
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0
+PHP message: PHP   2. require() /var/www/ld2/index.php:4
+PHP message: PHP   3. require() /var/www/ld2/setup.php:13
+PHP message: PHP   4. LD2\View->__construct() /var/www/ld2/app.php:41
+PHP message: PH" while reading upstream, client: 127.0.0.1, server: mysite.local, request: "GET /login HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/09/02 23:49:57 [error] 7733#7733: *359 FastCGI sent in stderr: "P   5. header() /var/www/ld2/lib/View.php:33" while reading upstream, client: 127.0.0.1, server: mysite.local, request: "GET /login HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/09/02 23:49:58 [error] 7733#7733: *359 FastCGI sent in stderr: "PHP message: PHP Warning:  ini_set() expects parameter 2 to be string, array given in /var/www/ld2/app.php on line 28
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0
+PHP message: PHP   2. require() /var/www/ld2/index.php:4
+PHP message: PHP   3. require() /var/www/ld2/setup.php:13
+PHP message: PHP   4. ini_set() /var/www/ld2/app.php:28" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /css/bootstrap.min.css.map HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/09/02 23:49:58 [error] 7733#7733: *359 FastCGI sent in stderr: "PHP message: PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /var/www/ld2/app.php:28) in /var/www/ld2/app.php on line 29
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0
+PHP message: PHP   2. require() /var/www/ld2/index.php:4
+PHP message: PHP   3. require() /var/www/ld2/setup.php:13
+PHP message: PHP   4. session_start() /var/www/ld2/app.php:29" while reading upstream, client: 127.0.0.1, server: mysite.local, request: "GET /css/bootstrap.min.css.map HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/09/02 23:49:58 [error] 7733#7733: *359 FastCGI sent in stderr: "PHP message: PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/ld2/app.php:28) in /var/www/ld2/lib/View.php on line 33
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0
+PHP message: PHP   2. require() /var/www/ld2/index.php:4
+PHP message: PHP   3. require() /var/www/ld2/setup.php:13
+PHP message: PHP   4. LD2\View->__construct() /var/www/ld2/app.php:41
+PHP message: PHP   5. header() /var/www/ld2/lib/View.php:33
+PHP message: PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/ld2/app.php:28) in /var/www/ld2/lib/View.php on line 33
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0
+PHP message: PHP   2. require() /var/www/ld2/index.php:4
+PHP message: PHP   3. require() /v" while reading upstream, client: 127.0.0.1, server: mysite.local, request: "GET /css/bootstrap.min.css.map HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/09/02 23:49:58 [error] 7733#7733: *359 FastCGI sent in stderr: "ar/www/ld2/setup.php:13
+PHP message: PHP   4. LD2\View->__construct() /var/www/ld2/app.php:41
+PHP message: PHP   5. header() /var/www/ld2/lib/View.php:33" while reading upstream, client: 127.0.0.1, server: mysite.local, request: "GET /css/bootstrap.min.css.map HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/09/02 23:49:58 [error] 7733#7733: *359 FastCGI sent in stderr: "PHP message: PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/ld2/app.php:28) in /var/www/ld2/lib/View.php on line 33
+PHP message: PHP Stack trace:
+PHP message: PHP   1. {main}() /var/www/ld2/index.php:0
+PHP message: PHP   2. require() /var/www/ld2/index.php:4
+PHP message: PHP   3. require() /var/www/ld2/setup.php:13
+PHP message: PHP   4. LD2\View->__construct() /var/www/ld2/app.php:41
+PHP message: PH" while reading upstream, client: 127.0.0.1, server: mysite.local, request: "GET /css/bootstrap.min.css.map HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/09/02 23:49:58 [error] 7733#7733: *359 FastCGI sent in stderr: "P   5. header() /var/www/ld2/lib/View.php:33" while reading upstream, client: 127.0.0.1, server: mysite.local, request: "GET /css/bootstrap.min.css.map HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my"
+2016/09/03 00:07:40 [error] 7735#7735: *372 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to a member function getGenerator() on null in /var/www/ld2/lib/BaseController.php:109
+Stack trace:
+#0 /var/www/ld2/site/IsAuthController.php(19): LD2\BaseController->generate('login')
+#1 /var/www/ld2/game/GameController.php(34): LD2Controller\IsAuthController->before()
+#2 /var/www/ld2/lib/BaseController.php(35): LD2Controller\GameController->before()
+#3 /var/www/ld2/config/router.php(34): LD2\BaseController->__construct(Object(LD2\App))
+#4 /var/www/ld2/app.php(47): require('/var/www/ld2/co...')
+#5 /var/www/ld2/setup.php(13): require('/var/www/ld2/ap...')
+#6 /var/www/ld2/index.php(4): require('/var/www/ld2/se...')
+#7 {main}
+  thrown in /var/www/ld2/lib/BaseController.php on line 109" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /game.main HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login"
+2016/09/03 00:08:20 [error] 7735#7735: *374 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to a member function getGenerator() on null in /var/www/ld2/lib/BaseController.php:109
+Stack trace:
+#0 /var/www/ld2/site/IsAuthController.php(19): LD2\BaseController->generate('login')
+#1 /var/www/ld2/game/GameController.php(34): LD2Controller\IsAuthController->before()
+#2 /var/www/ld2/lib/BaseController.php(35): LD2Controller\GameController->before()
+#3 /var/www/ld2/config/router.php(34): LD2\BaseController->__construct(Object(LD2\App))
+#4 /var/www/ld2/app.php(47): require('/var/www/ld2/co...')
+#5 /var/www/ld2/setup.php(13): require('/var/www/ld2/ap...')
+#6 /var/www/ld2/index.php(4): require('/var/www/ld2/se...')
+#7 {main}
+  thrown in /var/www/ld2/lib/BaseController.php on line 109" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /game.main HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login"
+2016/09/03 00:09:08 [error] 7735#7735: *376 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to a member function generate() on null in /var/www/ld2/lib/BaseController.php:109
+Stack trace:
+#0 /var/www/ld2/site/IsAuthController.php(19): LD2\BaseController->generate('login')
+#1 /var/www/ld2/game/GameController.php(34): LD2Controller\IsAuthController->before()
+#2 /var/www/ld2/lib/BaseController.php(35): LD2Controller\GameController->before()
+#3 /var/www/ld2/config/router.php(34): LD2\BaseController->__construct(Object(LD2\App))
+#4 /var/www/ld2/app.php(47): require('/var/www/ld2/co...')
+#5 /var/www/ld2/setup.php(13): require('/var/www/ld2/ap...')
+#6 /var/www/ld2/index.php(4): require('/var/www/ld2/se...')
+#7 {main}
+  thrown in /var/www/ld2/lib/BaseController.php on line 109" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /game.main HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login"
+2016/09/03 00:10:06 [error] 7735#7735: *378 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to a member function generate() on null in /var/www/ld2/lib/BaseController.php:109
+Stack trace:
+#0 /var/www/ld2/site/IsAuthController.php(19): LD2\BaseController->generate('login')
+#1 /var/www/ld2/game/GameController.php(34): LD2Controller\IsAuthController->before()
+#2 /var/www/ld2/lib/BaseController.php(35): LD2Controller\GameController->before()
+#3 /var/www/ld2/config/router.php(34): LD2\BaseController->__construct(Object(LD2\App))
+#4 /var/www/ld2/app.php(47): require('/var/www/ld2/co...')
+#5 /var/www/ld2/setup.php(13): require('/var/www/ld2/ap...')
+#6 /var/www/ld2/index.php(4): require('/var/www/ld2/se...')
+#7 {main}
+  thrown in /var/www/ld2/lib/BaseController.php on line 109" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /game.main HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login"
+2016/09/03 00:11:01 [error] 7735#7735: *378 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to a member function generate() on null in /var/www/ld2/lib/BaseController.php:109
+Stack trace:
+#0 /var/www/ld2/site/IsAuthController.php(19): LD2\BaseController->generate('login')
+#1 /var/www/ld2/game/GameController.php(34): LD2Controller\IsAuthController->before()
+#2 /var/www/ld2/lib/BaseController.php(35): LD2Controller\GameController->before()
+#3 /var/www/ld2/config/router.php(34): LD2\BaseController->__construct(Object(LD2\App))
+#4 /var/www/ld2/app.php(47): require('/var/www/ld2/co...')
+#5 /var/www/ld2/setup.php(13): require('/var/www/ld2/ap...')
+#6 /var/www/ld2/index.php(4): require('/var/www/ld2/se...')
+#7 {main}
+  thrown in /var/www/ld2/lib/BaseController.php on line 109" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /game.main HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login"
+2016/09/03 00:11:39 [error] 7735#7735: *381 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to a member function generate() on null in /var/www/ld2/lib/BaseController.php:109
+Stack trace:
+#0 /var/www/ld2/lib/BaseController.php(79): LD2\BaseController->generate('login', Array)
+#1 /var/www/ld2/site/IsAuthController.php(19): LD2\BaseController->forward('login')
+#2 /var/www/ld2/game/GameController.php(34): LD2Controller\IsAuthController->before()
+#3 /var/www/ld2/lib/BaseController.php(35): LD2Controller\GameController->before()
+#4 /var/www/ld2/config/router.php(34): LD2\BaseController->__construct(Object(LD2\App))
+#5 /var/www/ld2/app.php(47): require('/var/www/ld2/co...')
+#6 /var/www/ld2/setup.php(13): require('/var/www/ld2/ap...')
+#7 /var/www/ld2/index.php(4): require('/var/www/ld2/se...')
+#8 {main}
+  thrown in /var/www/ld2/lib/BaseController.php on line 109" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /game.main HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login"
+2016/09/03 00:36:44 [error] 7735#7735: *394 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to a member function generate() on null in /var/www/ld2/lib/BaseController.php:109
+Stack trace:
+#0 /var/www/ld2/lib/BaseController.php(79): LD2\BaseController->generate('login', Array)
+#1 /var/www/ld2/site/IsAuthController.php(19): LD2\BaseController->forward('login')
+#2 /var/www/ld2/game/GameController.php(34): LD2Controller\IsAuthController->before()
+#3 /var/www/ld2/lib/BaseController.php(35): LD2Controller\GameController->before()
+#4 /var/www/ld2/config/router.php(34): LD2\BaseController->__construct(Object(LD2\App))
+#5 /var/www/ld2/app.php(47): require('/var/www/ld2/co...')
+#6 /var/www/ld2/setup.php(13): require('/var/www/ld2/ap...')
+#7 /var/www/ld2/index.php(4): require('/var/www/ld2/se...')
+#8 {main}
+  thrown in /var/www/ld2/lib/BaseController.php on line 109" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /game.main HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/"
+2016/09/03 00:37:30 [error] 7734#7734: *396 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to a member function generate() on null in /var/www/ld2/lib/BaseController.php:109
+Stack trace:
+#0 /var/www/ld2/lib/BaseController.php(79): LD2\BaseController->generate('login', Array)
+#1 /var/www/ld2/site/IsAuthController.php(19): LD2\BaseController->forward('login')
+#2 /var/www/ld2/game/GameController.php(34): LD2Controller\IsAuthController->before()
+#3 /var/www/ld2/lib/BaseController.php(35): LD2Controller\GameController->before()
+#4 /var/www/ld2/config/router.php(34): LD2\BaseController->__construct(Object(LD2\App))
+#5 /var/www/ld2/app.php(47): require('/var/www/ld2/co...')
+#6 /var/www/ld2/setup.php(13): require('/var/www/ld2/ap...')
+#7 /var/www/ld2/index.php(4): require('/var/www/ld2/se...')
+#8 {main}
+  thrown in /var/www/ld2/lib/BaseController.php on line 109" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /game.main HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/"
+2016/09/03 00:38:02 [error] 7733#7733: *398 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to a member function generate() on null in /var/www/ld2/lib/BaseController.php:109
+Stack trace:
+#0 /var/www/ld2/lib/BaseController.php(79): LD2\BaseController->generate('login', Array)
+#1 /var/www/ld2/site/IsAuthController.php(19): LD2\BaseController->forward('login')
+#2 /var/www/ld2/game/GameController.php(34): LD2Controller\IsAuthController->before()
+#3 /var/www/ld2/lib/BaseController.php(35): LD2Controller\GameController->before()
+#4 /var/www/ld2/config/router.php(34): LD2\BaseController->__construct(Object(LD2\App))
+#5 /var/www/ld2/app.php(47): require('/var/www/ld2/co...')
+#6 /var/www/ld2/setup.php(13): require('/var/www/ld2/ap...')
+#7 /var/www/ld2/index.php(4): require('/var/www/ld2/se...')
+#8 {main}
+  thrown in /var/www/ld2/lib/BaseController.php on line 109" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /game.main HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/"
+2016/09/03 00:38:24 [error] 7733#7733: *398 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to a member function generate() on null in /var/www/ld2/lib/BaseController.php:109
+Stack trace:
+#0 /var/www/ld2/lib/BaseController.php(79): LD2\BaseController->generate('login', Array)
+#1 /var/www/ld2/site/IsAuthController.php(19): LD2\BaseController->forward('login')
+#2 /var/www/ld2/game/GameController.php(34): LD2Controller\IsAuthController->before()
+#3 /var/www/ld2/lib/BaseController.php(35): LD2Controller\GameController->before()
+#4 /var/www/ld2/config/router.php(34): LD2\BaseController->__construct(Object(LD2\App))
+#5 /var/www/ld2/app.php(47): require('/var/www/ld2/co...')
+#6 /var/www/ld2/setup.php(13): require('/var/www/ld2/ap...')
+#7 /var/www/ld2/index.php(4): require('/var/www/ld2/se...')
+#8 {main}
+  thrown in /var/www/ld2/lib/BaseController.php on line 109" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /game.main HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/"
+2016/09/03 00:38:33 [error] 7733#7733: *398 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to a member function generate() on null in /var/www/ld2/lib/BaseController.php:109
+Stack trace:
+#0 /var/www/ld2/lib/BaseController.php(79): LD2\BaseController->generate('login', Array)
+#1 /var/www/ld2/site/IsAuthController.php(19): LD2\BaseController->forward('login')
+#2 /var/www/ld2/game/GameController.php(34): LD2Controller\IsAuthController->before()
+#3 /var/www/ld2/lib/BaseController.php(35): LD2Controller\GameController->before()
+#4 /var/www/ld2/config/router.php(34): LD2\BaseController->__construct(Object(LD2\App))
+#5 /var/www/ld2/app.php(47): require('/var/www/ld2/co...')
+#6 /var/www/ld2/setup.php(13): require('/var/www/ld2/ap...')
+#7 /var/www/ld2/index.php(4): require('/var/www/ld2/se...')
+#8 {main}
+  thrown in /var/www/ld2/lib/BaseController.php on line 109" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /game.main HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/"
+2016/09/03 00:38:44 [error] 7733#7733: *398 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to a member function generate() on null in /var/www/ld2/lib/BaseController.php:109
+Stack trace:
+#0 /var/www/ld2/lib/BaseController.php(79): LD2\BaseController->generate('login', Array)
+#1 /var/www/ld2/site/IsAuthController.php(19): LD2\BaseController->forward('login')
+#2 /var/www/ld2/game/GameController.php(34): LD2Controller\IsAuthController->before()
+#3 /var/www/ld2/lib/BaseController.php(35): LD2Controller\GameController->before()
+#4 /var/www/ld2/config/router.php(34): LD2\BaseController->__construct(Object(LD2\App))
+#5 /var/www/ld2/app.php(47): require('/var/www/ld2/co...')
+#6 /var/www/ld2/setup.php(13): require('/var/www/ld2/ap...')
+#7 /var/www/ld2/index.php(4): require('/var/www/ld2/se...')
+#8 {main}
+  thrown in /var/www/ld2/lib/BaseController.php on line 109" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /game.main HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/"
+2016/09/03 00:39:47 [error] 7732#7732: *403 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to a member function generate() on null in /var/www/ld2/lib/BaseController.php:109
+Stack trace:
+#0 /var/www/ld2/lib/BaseController.php(79): LD2\BaseController->generate('login', Array)
+#1 /var/www/ld2/site/IsAuthController.php(19): LD2\BaseController->forward('login')
+#2 /var/www/ld2/game/GameController.php(34): LD2Controller\IsAuthController->before()
+#3 /var/www/ld2/lib/BaseController.php(35): LD2Controller\GameController->before()
+#4 /var/www/ld2/config/router.php(38): LD2\BaseController->__construct(Object(LD2\App))
+#5 /var/www/ld2/app.php(47): require('/var/www/ld2/co...')
+#6 /var/www/ld2/setup.php(13): require('/var/www/ld2/ap...')
+#7 /var/www/ld2/index.php(4): require('/var/www/ld2/se...')
+#8 {main}
+  thrown in /var/www/ld2/lib/BaseController.php on line 109" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /game.main HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/"
+2016/09/03 00:40:15 [error] 7735#7735: *405 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Call to a member function generate() on null in /var/www/ld2/lib/BaseController.php:109
+Stack trace:
+#0 /var/www/ld2/lib/BaseController.php(79): LD2\BaseController->generate('login', Array)
+#1 /var/www/ld2/site/IsAuthController.php(19): LD2\BaseController->forward('login')
+#2 /var/www/ld2/game/GameController.php(34): LD2Controller\IsAuthController->before()
+#3 /var/www/ld2/lib/BaseController.php(35): LD2Controller\GameController->before()
+#4 /var/www/ld2/config/router.php(38): LD2\BaseController->__construct(Object(LD2\App))
+#5 /var/www/ld2/app.php(47): require('/var/www/ld2/co...')
+#6 /var/www/ld2/setup.php(13): require('/var/www/ld2/ap...')
+#7 /var/www/ld2/index.php(4): require('/var/www/ld2/se...')
+#8 {main}
+  thrown in /var/www/ld2/lib/BaseController.php on line 109" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /game.main HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/"

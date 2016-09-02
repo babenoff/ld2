@@ -31,6 +31,10 @@ if(!class_exists($controller)) {
     $controller = "LD2Controller\\ErrorContoller";
     $action = "err404Action";
 }
+/**
+ *
+ */
+/** @var \LD2\BaseController $class */
 $class = new $controller($app);
 $class->setRouter($r);
 $class->setRequest($request);

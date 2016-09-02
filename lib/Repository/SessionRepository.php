@@ -155,4 +155,12 @@ class SessionRepository extends BaseRepository implements \SessionHandlerInterfa
     {
         return true;
     }
+
+    public function serializeSession($data){
+        if(is_array($data)){
+          RETURN serialize($data);
+        } else {
+            return unserialize($data);
+        }
+    }
 }

@@ -106,7 +106,7 @@ class BaseController
 
     public function generate($name, $options = [], $ref = Router::RELATIVE_PATH):string {
         try {
-            $url = "/" . $this->router->getGenerator()->generate($name, $options, $ref);
+            $url = "/" . $this->router->generate($name, $options, $ref);
         }catch (RouteNotFoundException $e){
             $url = "/". $this->router->generate("/err404");
         }

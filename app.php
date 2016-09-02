@@ -11,18 +11,21 @@ if (!version_compare('7', PHP_VERSION, '<')) {
 $config = require "config/config.php";
 require "config/container.php";
 require "config/event_dispatcher.php";
+$env = (getenv("ENVIROMENTS") == "production") ? 0 : 1;
 
+ini_set('display_errors', $env);
 
 if (!ini_get('date.timezone')) {
     ini_set('date.timezone', $container->getParameter("timezone"));
 }
 ini_set('session.gc_maxlifetime', $container->getParameter("session.gc_maxlifetime"));
 ini_set('session.cookie_lifetime', $container->getParameter("session.gc_maxlifetime"));
-ini_set('session.gc_divisor', $container->getParameter("session.gc_maxlifetime"));
+//ini_set('session.gc_divisor', $container->getParameter("session.gc_maxlifetime"));
 ini_set('session.gc_probability', $container->getParameter("session.gc_propability"));
 ini_set('session.name', $container->getParameter('session.name'));
 //$gc = ini_get('session.gc_probability');
 session_set_save_handler($container->get("session_repository"), true);
+//ini_set('session.serialize_handler', [$container->get("session_repository"), 'serializeSession']);
 session_start();
 $app = new \LD2\App();
 

@@ -17,4 +17,5 @@ Cnраница не найдена
 ERROR;
     $this->getApp()->getView()->display($page, [], "Ошибка");
     }
+
 }
