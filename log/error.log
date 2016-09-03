@@ -6717,3 +6717,11 @@ Stack trace:
 #7 /var/www/ld2/index.php(4): require('/var/www/ld2/se...')
 #8 {main}
   thrown in /var/www/ld2/lib/BaseController.php on line 109" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /game.main HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/"
+2016/09/03 08:35:39 [error] 7732#7732: *434 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Symfony\Component\Routing\Exception\RouteNotFoundException: Unable to generate a URL for the named route "/err404" as such route does not exist. in /var/www/ld2/vendor/symfony/routing/Generator/UrlGenerator.php:130
+Stack trace:
+#0 /var/www/ld2/vendor/symfony/routing/Router.php(244): Symfony\Component\Routing\Generator\UrlGenerator->generate('/err404', Array, 1)
+#1 /var/www/ld2/lib/BaseController.php(111): Symfony\Component\Routing\Router->generate('/err404')
+#2 /var/www/ld2/vendor/twig/twig/lib/Twig/Environment.php(403) : eval()'d code(33): LD2\BaseController->generate('logout')
+#3 /var/www/ld2/vendor/twig/twig/lib/Twig/Template.php(387): __TwigTemplate_7fa4008fc09930ae97635bbbf085aa83bb50b1127fcf69cb73650cb5908e1fa5->doDisplay(Array, Array)
+#4 /var/www/ld2/vendor/twig/twig/lib/Twig/Template.php(355): Twig_Template->displayWithErrorHandling(Array, Array)
+#5 /var/www/ld2/vendor/twig/twig/lib/Twig/Environment.php(403) : eval()'d code(34): Twig_Template->display(Array)" while reading response header from upstream, client: 127.0.0.1, server: mysite.local, request: "GET /game.main HTTP/1.1", upstream: "fastcgi://127.0.0.1:8999", host: "ld2.my", referrer: "http://ld2.my/login"
